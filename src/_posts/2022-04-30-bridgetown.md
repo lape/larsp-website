@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "This website and the Bridgetown site generator"
+title: "Bridgetown with Github Pages and custom domain"
 category: webtech
 ---
 
@@ -10,7 +10,29 @@ Having become an avid fan of Ruby in my recent developer years, a Ruby-powered s
 
 > _"Like the Ruby language itself, Bridgetown is optimized for web developer happiness."_
 
-Blog posts are written as Markdown files, which will be compiled to HTML by Bridgetown. Thanks to [andrewm](https://andrewm.codes/deploy-bridgetown-to-github-pages/) for the writeup on how to setup the Github Pages plugin to automatically publish the site when pushing new content.
+Thanks to andrewm for the writeup on [how to setup the Bridgetown Github Pages plugin](https://andrewm.codes/deploy-bridgetown-to-github-pages/) to automatically publish the site when pushing new content.
+
+I noticed that in order to get the deployment working with a custom domain the cname setting has to be included in the workflow file:
+
+```yaml
+# .github/workflows/gh-pages.yml (Deploy section)
+- name: Deploy
+  uses: peaceiris/actions-gh-pages@v3
+  with:
+    github_token: ${{ secrets.GITHUB_TOKEN }}
+    publish_dir: ./output
+    cname: larsp.dev
+```
+
+To prevent the auto reload script from being included in the deployed code I also changed the build environment in the Rakefile to _production_:
+
+```ruby
+desc "Build the Bridgetown site for deployment"
+task :deploy => [:clean, "frontend:build"] do
+  ENV["BRIDGETOWN_ENV"] = "production"
+  Bridgetown::Commands::Build.start
+end
+```
 
 View this site's source on [Github](https://github.com/lape/larsp-website).
 
