@@ -10,35 +10,7 @@
 <link rel="stylesheet" href="/_bridgetown/static/index.LT3BSZ44.css" />
 <script src="/_bridgetown/static/index.PJZZ2K4I.js" defer></script>
 <script src="https://unpkg.com/feather-icons"></script>
-<script type="module">let lastmod = 0
-function startReloadConnection() {
-  const evtSource = new EventSource("/_bridgetown/live_reload")
-  evtSource.onmessage = event => {
-    if (event.data == "reloaded!") {
-      location.reload()
-    } else {
-      const newmod = Number(event.data)
-      if (lastmod > 0 && newmod > 0 && lastmod < newmod) {
-        location.reload()
-      } else {
-        lastmod = newmod
-      }
-    }
-  }
-  evtSource.onerror = event => {
-    if (evtSource.readyState === 2) {
-      // reconnect with new object
-      evtSource.close()
-      console.warn("Live reload: attempting to reconnect in 3 seconds...")
 
-      setTimeout(() => startReloadConnection(), 3000)
-    }
-  }
-}
-setTimeout(() => {
-  startReloadConnection()
-}, 500)
-</script>
 
   </head>
   <body class="post ">
