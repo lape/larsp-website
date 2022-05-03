@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>This website and the Bridgetown site generator | larsp.dev</title>
+<title>Bridgetown with Github Pages and custom domain | larsp.dev</title>
 
 <meta name="description" content="Drupal and Ruby on Rails software engineer. This is my personal website where I write about my journey as a full stack developer and take notes on things I’ve learned along the way." />
 
@@ -28,7 +28,7 @@
 
 
     <main>
-      <h1>This website and the Bridgetown site generator</h1>
+      <h1>Bridgetown with Github Pages and custom domain</h1>
 
 <p>For this personal website, I like to keep it lean and minimal and the blogging software or CMS should stay out of the way. It shouldn’t be a hassle to maintain or update. So in 2022 I started this site with the <a href="https://bridgetownrb.com/">Bridgetown</a> static site generator.</p>
 
@@ -38,7 +38,27 @@
   <p><em>“Like the Ruby language itself, Bridgetown is optimized for web developer happiness.”</em></p>
 </blockquote>
 
-<p>Blog posts are written as Markdown files, which will be compiled to HTML by Bridgetown. Thanks to <a href="https://andrewm.codes/deploy-bridgetown-to-github-pages/">andrewm</a> for the writeup on how to setup the Github Pages plugin to automatically publish the site when pushing new content.</p>
+<p>Thanks to andrewm for the writeup on <a href="https://andrewm.codes/deploy-bridgetown-to-github-pages/">how to setup the Bridgetown Github Pages plugin</a> to automatically publish the site when pushing new content.</p>
+
+<p>I noticed that in order to get the deployment working with a custom domain the cname setting has to be included in the workflow file:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># .github/workflows/gh-pages.yml (Deploy section)</span>
+<span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Deploy</span>
+  <span class="na">uses</span><span class="pi">:</span> <span class="s">peaceiris/actions-gh-pages@v3</span>
+  <span class="na">with</span><span class="pi">:</span>
+    <span class="na">github_token</span><span class="pi">:</span> <span class="s">${{ secrets.GITHUB_TOKEN }}</span>
+    <span class="na">publish_dir</span><span class="pi">:</span> <span class="s">./output</span>
+    <span class="na">cname</span><span class="pi">:</span> <span class="s">larsp.dev</span>
+</code></pre></div></div>
+
+<p>To prevent the auto reload script from being included in the deployed code I also changed the build environment in the Rakefile to <em>production</em>:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">desc</span> <span class="s2">"Build the Bridgetown site for deployment"</span>
+<span class="n">task</span> <span class="ss">:deploy</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:clean</span><span class="p">,</span> <span class="s2">"frontend:build"</span><span class="p">]</span> <span class="k">do</span>
+  <span class="no">ENV</span><span class="p">[</span><span class="s2">"BRIDGETOWN_ENV"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"production"</span>
+  <span class="no">Bridgetown</span><span class="o">::</span><span class="no">Commands</span><span class="o">::</span><span class="no">Build</span><span class="p">.</span><span class="nf">start</span>
+<span class="k">end</span>
+</code></pre></div></div>
 
 <p>View this site’s source on <a href="https://github.com/lape/larsp-website">Github</a>.</p>
 
