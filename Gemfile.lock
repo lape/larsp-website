@@ -42,6 +42,8 @@ GEM
       tilt (~> 2.0)
       webrick (~> 1.7)
       zeitwerk (~> 2.5)
+    bridgetown-feed (2.1.0)
+      bridgetown (>= 1.0.0.alpha5, < 2.0)
     bridgetown-paginate (1.0.0)
       bridgetown-core (= 1.0.0)
     colorator (1.1.0)
@@ -85,7 +87,7 @@ GEM
     listen (3.7.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
-    minitest (5.16.0)
+    minitest (5.16.1)
     multipart-post (2.2.3)
     nio4r (2.5.8)
     public_suffix (4.0.7)
@@ -123,6 +125,7 @@ PLATFORMS
 
 DEPENDENCIES
   bridgetown (~> 1.0.0)
+  bridgetown-feed (~> 2.1)
   puma (~> 5.6)
 
 BUNDLED WITH
