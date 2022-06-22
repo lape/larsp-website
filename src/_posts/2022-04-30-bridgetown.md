@@ -27,6 +27,7 @@ I noticed that in order to get the deployment working with a custom domain the c
 To prevent the auto reload script from being included in the deployed code I also changed the build environment in the Rakefile to _production_:
 
 ```ruby
+# Rakefile
 desc "Build the Bridgetown site for deployment"
 task :deploy => [:clean, "frontend:build"] do
   ENV["BRIDGETOWN_ENV"] = "production"
