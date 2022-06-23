@@ -11,6 +11,8 @@ title: Posts
   <% end %>
 </ul>
 
+<a href="https://larsp.dev/feed.xml">Subscribe to Atom feed</a>
+
 ----
 
 Made with [Bridgetown](/webtech/2022/04/30/bridgetown/)
