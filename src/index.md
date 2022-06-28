@@ -8,7 +8,7 @@ Hi, I'm Lars - Independent Drupal and Ruby on Rails software engineer. This is m
 
 If you like, you can read more [about me](/about) or how [this website](/webtech/2022/04/30/bridgetown/) was made.
 
-<h3>Blog posts:</h3>
+### Blog posts:
 
 <ul>
   <% collections.posts.resources.each do |post| %>
