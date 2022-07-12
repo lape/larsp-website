@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ruby on Rails with Docker in Production | larsp.dev</title>
+
+<link type="application/atom+xml" rel="alternate" href="https://larsp.dev/feed.xml" title="larsp.dev" />
+<link rel="stylesheet" href="/_bridgetown/static/index.NS34EO3V.css" />
+<script src="/_bridgetown/static/index.PJZZ2K4I.js" defer></script>
+<script src="https://unpkg.com/feather-icons"></script>
+
+
+  </head>
+  <body class="post ">
+    <header>
+  <h2>larsp.dev</h2>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/posts">Blog</a></li>
+  </ul>
+</nav>
+
+
+    <main>
+      <h1>Ruby on Rails with Docker in Production</h1>
+
+<p>Docker is great. Clean separation of applications, neatly defined versions of the underlying software and languages lead to consistent, replicable testing and deployments in all kinds of environments.</p>
+
+<p>Not only for development, but also for production. Combine with nginx or Traefik as load balancer/reverse proxy.</p>
+
+<p>Note: Probably not all three database clients that are included in the Dockerfile are necessary for your application, so cut down as you like.</p>
+
+<h3 id="dockerfile">Dockerfile</h3>
+
+<div class="language-docker highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">FROM</span><span class="s"> ruby:3.1.1</span>
+<span class="k">RUN </span>curl <span class="nt">-sL</span> https://deb.nodesource.com/setup_14.x | bash -
+<span class="k">RUN </span>apt-get update <span class="nt">-qq</span> <span class="o">&amp;&amp;</span> apt-get <span class="nb">install</span> <span class="nt">-qq</span> <span class="nt">--no-install-recommends</span> <span class="se">\
+</span>    nodejs <span class="se">\
+</span>    mariadb-client <span class="se">\
+</span>    postgresql-client <span class="se">\
+</span>		sqlite3 <span class="se">\
+</span>  <span class="o">&amp;&amp;</span> apt-get clean <span class="se">\
+</span>  <span class="o">&amp;&amp;</span> <span class="nb">rm</span> <span class="nt">-rf</span> /var/lib/apt/lists/<span class="k">*</span>
+<span class="k">RUN </span>npm <span class="nb">install</span> <span class="nt">-g</span> yarn@1
+<span class="k">WORKDIR</span><span class="s"> /app</span>
+<span class="k">COPY</span><span class="s"> Gemfile Gemfile.lock ./</span>
+<span class="k">RUN </span>gem <span class="nb">install </span>bundler
+<span class="k">RUN </span>bundle config <span class="nb">set </span>force_ruby_platform <span class="nb">true</span>
+<span class="k">RUN </span>bundle config <span class="nb">set</span> <span class="nt">--local</span> without <span class="s1">'development test'</span>
+<span class="k">RUN </span>bundle <span class="nb">install</span> <span class="nt">--jobs</span> 20 <span class="nt">--retry</span> 5
+
+<span class="c"># Set Rails to run in production</span>
+<span class="k">ENV</span><span class="s"> RAILS_ENV production</span>
+<span class="k">ENV</span><span class="s"> RACK_ENV production</span>
+
+<span class="k">COPY</span><span class="s"> . ./</span>
+
+<span class="k">RUN </span><span class="nv">SECRET_KEY_BASE</span><span class="o">=</span><span class="sb">`</span>bundle <span class="nb">exec </span>rails secret<span class="sb">`</span> bundle <span class="nb">exec </span>rails assets:precompile
+<span class="k">CMD</span><span class="s"> bundle exec rails s -e production</span>
+</code></pre></div></div>
+
+<p>Extend with a Github action to build on commit (similar to <a href="/webtech/2022/04/30/bridgetown/">autobuilding this Bridgetown site</a>). You need a Docker image repository where the ready build image will be pushed, e.g. Docker Hub or Amazon ECR.</p>
+
+
+Comments? Share your opinion on <a href="https://twitter.com/lape">Twitter</a>
+
+    </main>
+
+    <footer>
+  Contact me at <a href="mailto:hello@larsp.dev">hello@larsp.dev</a>
+</footer>
+
+
+    <!-- Feather icon font -->
+    <script>feather.replace()</script>
+
+    <!-- Fathom -->
+    <script src="https://static.larsp.dev/script.js" data-site="QSDCBJIK" defer></script>
+  </body>
+</html>
