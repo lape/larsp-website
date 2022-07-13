@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Ruby on Rails with Docker in Production"
+title: "Ruby on Rails with Docker in production"
 category: rails
 ---
 
@@ -9,7 +9,7 @@ Docker is great. Clean separation of applications, neatly defined versions of th
 Not only for development, but also for production. Combine with nginx or Traefik as load balancer/reverse proxy.
 
 Note: Probably not all three database clients that are included in the Dockerfile are necessary for your application, so cut down as you like.
- 
+
 ### Dockerfile
 
 ```docker
