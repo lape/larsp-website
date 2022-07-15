@@ -1,39 +1,39 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://bridgetownrb.com/" version="1.1.0.beta3">Bridgetown</generator><link href="https://larsp.dev/feed.xml" rel="self" type="application/atom+xml" /><link href="https://larsp.dev/" rel="alternate" type="text/html" /><updated>2022-07-13T11:36:00+02:00</updated><id>https://larsp.dev/feed.xml</id><title type="html">larsp.dev</title><subtitle>Drupal and Ruby on Rails software developer here. This is my personal website where I write about my journey as a full stack developer and take notes on things I’ve learned along the way.</subtitle><entry><title type="html">Ruby on Rails with Docker in production</title><link href="https://larsp.dev/rails/2022/07/12/ruby-on-rails-docker-production/" rel="alternate" type="text/html" title="Ruby on Rails with Docker in production" /><published>2022-07-12T00:00:00+02:00</published><updated>2022-07-12T00:00:00+02:00</updated><id>repo://posts.collection/_posts/2022-07-12-ruby-on-rails-docker-production.md</id><content type="html" xml:base="https://larsp.dev/rails/2022/07/12/ruby-on-rails-docker-production/">&lt;p&gt;Docker is great. Clean separation of applications, neatly defined versions of the underlying software and languages lead to consistent, replicable testing and deployments in all kinds of environments.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://bridgetownrb.com/" version="1.0.0">Bridgetown</generator><link href="https://larsp.dev/feed.xml" rel="self" type="application/atom+xml" /><link href="https://larsp.dev/" rel="alternate" type="text/html" /><updated>2022-07-15T11:04:40+02:00</updated><id>https://larsp.dev/feed.xml</id><title type="html">larsp.dev</title><subtitle>Drupal and Ruby on Rails software developer here. This is my personal website where I write about my journey as a full stack developer and take notes on things I’ve learned along the way.</subtitle><entry><title type="html">Ruby on Rails with Docker in production</title><link href="https://larsp.dev/rails/2022/07/12/ruby-on-rails-docker-production/" rel="alternate" type="text/html" title="Ruby on Rails with Docker in production" /><published>2022-07-12T00:00:00+02:00</published><updated>2022-07-12T00:00:00+02:00</updated><id>repo://posts.collection/_posts/2022-07-12-ruby-on-rails-docker-production.md</id><content type="html" xml:base="https://larsp.dev/rails/2022/07/12/ruby-on-rails-docker-production/">&lt;p&gt;Docker is great. Clean separation of applications, neatly defined versions of the underlying software and languages lead to consistent, replicable testing and deployments in all kinds of environments. Not only for development, but also for production.&lt;/p&gt;
 
-&lt;p&gt;Not only for development, but also for production. Combine with nginx or Traefik as load balancer/reverse proxy.&lt;/p&gt;
-
-&lt;p&gt;Note: Probably not all three database clients that are included in the Dockerfile are necessary for your application, so cut down as you like.&lt;/p&gt;
+&lt;p&gt;Maybe not all three database clients MySQL/PostgreSQL/SQLite that are included in the Dockerfile are necessary for your application, so omit what isn’t needed.&lt;/p&gt;
 
 &lt;h3 id=&quot;dockerfile&quot;&gt;Dockerfile&lt;/h3&gt;
 
-&lt;div class=&quot;language-docker highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; ruby:3.1.1&lt;/span&gt;
+&lt;div class=&quot;language-docker highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Ruby on Rails application in production mode&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; ruby:3.1.1&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-sL&lt;/span&gt; https://deb.nodesource.com/setup_14.x | bash -
 &lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;apt-get update &lt;span class=&quot;nt&quot;&gt;-qq&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; apt-get &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-qq&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--no-install-recommends&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\
-&lt;/span&gt;    nodejs &lt;span class=&quot;se&quot;&gt;\
-&lt;/span&gt;    mariadb-client &lt;span class=&quot;se&quot;&gt;\
-&lt;/span&gt;    postgresql-client &lt;span class=&quot;se&quot;&gt;\
-&lt;/span&gt;		sqlite3 &lt;span class=&quot;se&quot;&gt;\
+&lt;/span&gt;  nodejs &lt;span class=&quot;se&quot;&gt;\
+&lt;/span&gt;  mariadb-client &lt;span class=&quot;se&quot;&gt;\
+&lt;/span&gt;  postgresql-client &lt;span class=&quot;se&quot;&gt;\
+&lt;/span&gt;  sqlite3 &lt;span class=&quot;se&quot;&gt;\
 &lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; apt-get clean &lt;span class=&quot;se&quot;&gt;\
 &lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;rm&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-rf&lt;/span&gt; /var/lib/apt/lists/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; yarn@1
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; yarn
 &lt;span class=&quot;k&quot;&gt;WORKDIR&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; /app&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;COPY&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; Gemfile Gemfile.lock ./&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;gem &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;bundler
 &lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;bundle config &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;force_ruby_platform &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;bundle config &lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--local&lt;/span&gt; without &lt;span class=&quot;s1&quot;&gt;&apos;development test&apos;&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;bundle &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--jobs&lt;/span&gt; 20 &lt;span class=&quot;nt&quot;&gt;--retry&lt;/span&gt; 5
-
-&lt;span class=&quot;c&quot;&gt;# Set Rails to run in production&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; RAILS_ENV production&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; RACK_ENV production&lt;/span&gt;
-
 &lt;span class=&quot;k&quot;&gt;COPY&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; . ./&lt;/span&gt;
-
 &lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;SECRET_KEY_BASE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;rails secret&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt; bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;rails assets:precompile
+&lt;span class=&quot;k&quot;&gt;EXPOSE&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; 3000&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;CMD&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; bundle exec rails s -e production&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Extend with a Github action to build on commit (similar to &lt;a href=&quot;/webtech/2022/04/30/bridgetown/&quot;&gt;autobuilding this Bridgetown site&lt;/a&gt;). You need a Docker image repository where the ready build image will be pushed, e.g. Docker Hub or Amazon ECR.&lt;/p&gt;</content><author><name></name></author><category term="rails" /></entry><entry><title type="html">Bridgetown with Github Pages and custom domain</title><link href="https://larsp.dev/webtech/2022/04/30/bridgetown/" rel="alternate" type="text/html" title="Bridgetown with Github Pages and custom domain" /><published>2022-04-30T00:00:00+02:00</published><updated>2022-04-30T00:00:00+02:00</updated><id>repo://posts.collection/_posts/2022-04-30-bridgetown.md</id><content type="html" xml:base="https://larsp.dev/webtech/2022/04/30/bridgetown/">&lt;p&gt;For this personal website, I like to keep it lean and minimal and the blogging software or CMS should stay out of the way. It shouldn’t be a hassle to maintain or update. So in 2022 I started this site with the &lt;a href=&quot;https://bridgetownrb.com/&quot;&gt;Bridgetown&lt;/a&gt; static site generator.&lt;/p&gt;
+&lt;p&gt;Extend with a Github action to build on commit (similar to &lt;a href=&quot;/webtech/2022/04/30/bridgetown/&quot;&gt;autobuilding this Bridgetown site&lt;/a&gt;) and push the image to a repository like Docker Hub or Amazon ECR.&lt;/p&gt;
+
+&lt;p&gt;Combine with nginx or &lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-use-traefik-v2-as-a-reverse-proxy-for-docker-containers-on-ubuntu-20-04&quot;&gt;Traefik&lt;/a&gt; as load balancer/reverse proxy.&lt;/p&gt;
+
+&lt;p&gt;Using nginx an additional certbot container is needed to generate and renew Letsencrypt TLS certificates. Traefik will handle this by itself.&lt;/p&gt;</content><author><name></name></author><category term="rails" /></entry><entry><title type="html">Bridgetown with Github Pages and custom domain</title><link href="https://larsp.dev/webtech/2022/04/30/bridgetown/" rel="alternate" type="text/html" title="Bridgetown with Github Pages and custom domain" /><published>2022-04-30T00:00:00+02:00</published><updated>2022-04-30T00:00:00+02:00</updated><id>repo://posts.collection/_posts/2022-04-30-bridgetown.md</id><content type="html" xml:base="https://larsp.dev/webtech/2022/04/30/bridgetown/">&lt;p&gt;For this personal website, I like to keep it lean and minimal and the blogging software or CMS should stay out of the way. It shouldn’t be a hassle to maintain or update. So in 2022 I started this site with the &lt;a href=&quot;https://bridgetownrb.com/&quot;&gt;Bridgetown&lt;/a&gt; static site generator.&lt;/p&gt;
 
 &lt;p&gt;Having become an avid fan of Ruby in my recent developer years, a Ruby-powered static site generator seems a good fit. Bridgetown stands on the shoulders of &lt;a href=&quot;https://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt;, which became immensely popular through Github Pages.&lt;/p&gt;
 

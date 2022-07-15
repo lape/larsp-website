@@ -29,42 +29,42 @@
     <main>
       <h1>Ruby on Rails with Docker in production</h1>
 
-<p>Docker is great. Clean separation of applications, neatly defined versions of the underlying software and languages lead to consistent, replicable testing and deployments in all kinds of environments.</p>
+<p>Docker is great. Clean separation of applications, neatly defined versions of the underlying software and languages lead to consistent, replicable testing and deployments in all kinds of environments. Not only for development, but also for production.</p>
 
-<p>Not only for development, but also for production. Combine with nginx or Traefik as load balancer/reverse proxy.</p>
-
-<p>Note: Probably not all three database clients that are included in the Dockerfile are necessary for your application, so cut down as you like.</p>
+<p>Maybe not all three database clients MySQL/PostgreSQL/SQLite that are included in the Dockerfile are necessary for your application, so omit what isn’t needed.</p>
 
 <h3 id="dockerfile">Dockerfile</h3>
 
-<div class="language-docker highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">FROM</span><span class="s"> ruby:3.1.1</span>
+<div class="language-docker highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Ruby on Rails application in production mode</span>
+<span class="k">FROM</span><span class="s"> ruby:3.1.1</span>
 <span class="k">RUN </span>curl <span class="nt">-sL</span> https://deb.nodesource.com/setup_14.x | bash -
 <span class="k">RUN </span>apt-get update <span class="nt">-qq</span> <span class="o">&amp;&amp;</span> apt-get <span class="nb">install</span> <span class="nt">-qq</span> <span class="nt">--no-install-recommends</span> <span class="se">\
-</span>    nodejs <span class="se">\
-</span>    mariadb-client <span class="se">\
-</span>    postgresql-client <span class="se">\
-</span>		sqlite3 <span class="se">\
+</span>  nodejs <span class="se">\
+</span>  mariadb-client <span class="se">\
+</span>  postgresql-client <span class="se">\
+</span>  sqlite3 <span class="se">\
 </span>  <span class="o">&amp;&amp;</span> apt-get clean <span class="se">\
 </span>  <span class="o">&amp;&amp;</span> <span class="nb">rm</span> <span class="nt">-rf</span> /var/lib/apt/lists/<span class="k">*</span>
-<span class="k">RUN </span>npm <span class="nb">install</span> <span class="nt">-g</span> yarn@1
+<span class="k">RUN </span>npm <span class="nb">install</span> <span class="nt">-g</span> yarn
 <span class="k">WORKDIR</span><span class="s"> /app</span>
 <span class="k">COPY</span><span class="s"> Gemfile Gemfile.lock ./</span>
 <span class="k">RUN </span>gem <span class="nb">install </span>bundler
 <span class="k">RUN </span>bundle config <span class="nb">set </span>force_ruby_platform <span class="nb">true</span>
 <span class="k">RUN </span>bundle config <span class="nb">set</span> <span class="nt">--local</span> without <span class="s1">'development test'</span>
 <span class="k">RUN </span>bundle <span class="nb">install</span> <span class="nt">--jobs</span> 20 <span class="nt">--retry</span> 5
-
-<span class="c"># Set Rails to run in production</span>
 <span class="k">ENV</span><span class="s"> RAILS_ENV production</span>
 <span class="k">ENV</span><span class="s"> RACK_ENV production</span>
-
 <span class="k">COPY</span><span class="s"> . ./</span>
-
 <span class="k">RUN </span><span class="nv">SECRET_KEY_BASE</span><span class="o">=</span><span class="sb">`</span>bundle <span class="nb">exec </span>rails secret<span class="sb">`</span> bundle <span class="nb">exec </span>rails assets:precompile
+<span class="k">EXPOSE</span><span class="s"> 3000</span>
 <span class="k">CMD</span><span class="s"> bundle exec rails s -e production</span>
 </code></pre></div></div>
 
-<p>Extend with a Github action to build on commit (similar to <a href="/webtech/2022/04/30/bridgetown/">autobuilding this Bridgetown site</a>). You need a Docker image repository where the ready build image will be pushed, e.g. Docker Hub or Amazon ECR.</p>
+<p>Extend with a Github action to build on commit (similar to <a href="/webtech/2022/04/30/bridgetown/">autobuilding this Bridgetown site</a>) and push the image to a repository like Docker Hub or Amazon ECR.</p>
+
+<p>Combine with nginx or <a href="https://www.digitalocean.com/community/tutorials/how-to-use-traefik-v2-as-a-reverse-proxy-for-docker-containers-on-ubuntu-20-04">Traefik</a> as load balancer/reverse proxy.</p>
+
+<p>Using nginx an additional certbot container is needed to generate and renew Letsencrypt TLS certificates. Traefik will handle this by itself.</p>
 
 
 Comments? Share your opinion on <a href="https://twitter.com/lape">Twitter</a>
