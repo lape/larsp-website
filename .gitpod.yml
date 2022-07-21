@@ -2,5 +2,5 @@ image:
   file: .gitpod.Dockerfile
 
 tasks:
-  - init: yarn install && bundle install
-  - command: bin/bridgetown start
+  - init: yarn install
+  - command: bundle install && bin/bridgetown start
