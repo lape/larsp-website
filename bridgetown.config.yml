@@ -16,7 +16,7 @@
 
 url: "https://larsp.dev"
 
-permalink: pretty
+permalink: simple
 template_engine: erb
 
 # Other options you might want to investigate:

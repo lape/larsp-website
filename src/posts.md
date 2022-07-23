@@ -15,5 +15,5 @@ title: Posts
 
 ----
 
-Made with [Bridgetown](/webtech/2022/04/30/bridgetown/)
+Made with [Bridgetown](/webtech/bridgetown/)
 {:style="text-align:center"}
