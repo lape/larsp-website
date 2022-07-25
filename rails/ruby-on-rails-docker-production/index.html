@@ -29,7 +29,7 @@
     <main>
       <h1>Ruby on Rails with Docker in production</h1>
 
-<p>Docker is great. Clean separation of applications, neatly defined versions of the underlying software and languages lead to consistent, replicable testing and deployments in all kinds of environments. Not only for development, but also for production.</p>
+<p>Docker is great. Clean separation of applications, neatly defined versions of the underlying software and languages lead to consistent, replicable testing and deployments in all kinds of environments. Not only during development, but also for production.</p>
 
 <p>Maybe not all three database clients MySQL/PostgreSQL/SQLite that are included in the Dockerfile are necessary for your application, so omit what isn’t needed.</p>
 
@@ -57,12 +57,12 @@
 <span class="k">COPY</span><span class="s"> . ./</span>
 <span class="k">RUN </span><span class="nv">SECRET_KEY_BASE</span><span class="o">=</span><span class="sb">`</span>bundle <span class="nb">exec </span>rails secret<span class="sb">`</span> bundle <span class="nb">exec </span>rails assets:precompile
 <span class="k">EXPOSE</span><span class="s"> 3000</span>
-<span class="k">CMD</span><span class="s"> bundle exec rails s -e production</span>
+<span class="k">CMD</span><span class="s"> bundle exec rails s -e production -p 3000</span>
 </code></pre></div></div>
 
-<p>Extend with a Github action to build on commit (similar to <a href="/webtech/2022/04/30/bridgetown/">autobuilding this Bridgetown site</a>) and push the image to a repository like Docker Hub or Amazon ECR.</p>
+<p>Extend with a Github action to build on commit (similar to <a href="/webtech/bridgetown/">autobuilding this Bridgetown site</a>) and push the image to a repository like Docker Hub or Amazon ECR.</p>
 
-<p>Combine with nginx or <a href="https://www.digitalocean.com/community/tutorials/how-to-use-traefik-v2-as-a-reverse-proxy-for-docker-containers-on-ubuntu-20-04">Traefik</a> as load balancer/reverse proxy.</p>
+<p>Combine with nginx or <a href="https://github.com/traefik/traefik">Traefik</a> as load balancer/reverse proxy.</p>
 
 <p>Using nginx an additional certbot container is needed to generate and renew Letsencrypt TLS certificates. Traefik will handle this by itself.</p>
 
