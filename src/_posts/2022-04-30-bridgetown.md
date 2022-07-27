@@ -4,15 +4,19 @@ title: "Bridgetown with Github Pages and custom domain"
 category: webtech
 ---
 
-For this personal website, I like to keep it lean and minimal and the blogging software or CMS should stay out of the way. It shouldn't be a hassle to maintain or update. So in 2022 I started this site with the [Bridgetown](https://bridgetownrb.com/) static site generator.
+For this personal website, I wanted to keep it lean and minimal and the blogging software or CMS should stay out of the way. It shouldn't be a hassle to maintain or update. So in 2022 I started this site with the [Bridgetown](https://bridgetownrb.com/) static site generator. And so far, it's going well.
 
-Having become an avid fan of Ruby in my recent developer years, a Ruby-powered static site generator seems a good fit. Bridgetown stands on the shoulders of [Jekyll](https://jekyllrb.com), which became immensely popular through Github Pages.
+Having become quite an avid fan of Ruby in my recent developer years, a Ruby-powered static site generator seems a good fit. Bridgetown stands on the shoulders of [Jekyll](https://jekyllrb.com), which became immensely popular through Github Pages.
 
 > _"Like the Ruby language itself, Bridgetown is optimized for web developer happiness."_
 
-Thanks to andrewm for the writeup on [how to setup the Bridgetown Github Pages plugin](https://andrewm.codes/deploy-bridgetown-to-github-pages/) to automatically publish the site when pushing new content.
+There is an undeniable appeal to static websites. Fast and simple, solid and staying as they are, without surprises (usually).
 
-I noticed that in order to get the deployment working with a custom domain the cname setting has to be included in the workflow file:
+## Build and deploy on Github
+
+Thanks to [@andrewmcodes](https://twitter.com/andrewmcodes) for the writeup on [how to setup the Bridgetown Github Pages plugin](https://andrewm.codes/deploy-bridgetown-to-github-pages/) to automatically publish a site when pushing new content.
+
+I noticed that in order to get the deployment working with a custom domain the _cname_ setting has to be included in the workflow file:
 
 ```yaml
 # .github/workflows/gh-pages.yml (Deploy section)
