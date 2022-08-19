@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Archiving CMS websites to static files with httrack | larsp.dev</title>
+
+<link type="application/atom+xml" rel="alternate" href="https://larsp.dev/feed.xml" title="larsp.dev" />
+<link rel="stylesheet" href="/_bridgetown/static/index.NS34EO3V.css" />
+<script src="/_bridgetown/static/index.PJZZ2K4I.js" defer></script>
+<script src="https://unpkg.com/feather-icons"></script>
+
+
+  </head>
+  <body class="post ">
+    <header>
+  <h2>larsp.dev</h2>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/posts">Blog</a></li>
+  </ul>
+</nav>
+
+
+    <main>
+      <h1>Archiving CMS websites to static files with httrack</h1>
+
+<p>When a website made with a content management system like Drupal or Wordpress is no longer updated with content or a campaign has ended, sometimes the webpages need to be archived for reference or just stay online without any more changes. But it’s not always possible to upgrade all of the CMS along the way. Maybe there’s a major version change and it’s not economically reasonable to upgrade the custom modules for a site no longer in production use.</p>
+
+<p>That’s why it’s convenient to know how to easily archive a site to static HTML files.</p>
+
+<h2 id="using-the-httrack-tool-to-archive-a-website">Using the httrack tool to archive a website</h2>
+
+<p>There are quite some options for archiving a website (see <a href="https://github.com/iipc/awesome-web-archiving">Awesome Web Archiving List</a>). I prefer using the <a href="https://www.httrack.com">httrack</a> command line tool. On MacOS using Homebrew install it simply with:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew install httrack
+</code></pre></div></div>
+
+<p>These seem optimal httrack options for mirroring:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>httrack http://SITE_TO_ARCHIVE <span class="nt">-O</span> DESTINATION_DIR <span class="nt">-N</span> <span class="s2">"%h%p/%n/index%[page].%t"</span> <span class="se">\</span>
+  <span class="nt">-WqQ</span>%v <span class="nt">--robots</span><span class="o">=</span>0 <span class="nt">--footer</span> <span class="s1">''</span>
+</code></pre></div></div>
+
+<p>The tool will prompt you if external links should be followed.</p>
+
+<p>If you like, relative links can also be rewritten afterwards e.g. “about.html” to “about”. This is optional but useful if you want to preserve the URL paths (for inbound links).</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find <span class="nb">.</span> <span class="nt">-name</span> <span class="s2">"*.html"</span> <span class="nt">-type</span> f <span class="nt">-print0</span> | xargs <span class="nt">-0</span> perl <span class="nt">-i</span> <span class="nt">-pe</span> <span class="s2">"s/</span><span class="se">\/</span><span class="s2">index.html/</span><span class="se">\/</span><span class="s2">/g"</span>
+</code></pre></div></div>
+
+<p>Copy the homepage index index/index.html to the site root and change include paths and links in it (remove “../” everywhere).</p>
+
+<p>If the source site uses HTTP authentication, provide username and password as part of the URL: username:password@your.url</p>
+
+<p>The resulting files can be served from some inexpensive static web hosting like Netlify or Github Pages.</p>
+
+<ul>
+  <li><a href="http://www.httrack.com/html/fcguide.html">Httrack users guide</a></li>
+  <li><a href="https://www.drupal.org/node/27882">Archiving Drupal sites</a> on drupal.org.</li>
+  <li>Karen from Lullabot <a href="https://www.lullabot.com/articles/sending-drupal-site-retirement-using-httrack">about archiving Drupal sites</a></li>
+</ul>
+
+
+Comments? Share your opinion on <a href="https://twitter.com/lape">Twitter</a>
+
+    </main>
+
+    <footer>
+  Contact me at <a href="mailto:hello@larsp.dev">hello@larsp.dev</a>
+</footer>
+
+
+    <!-- Feather icon font -->
+    <script>feather.replace()</script>
+
+    <!-- Fathom -->
+    <script src="https://static.larsp.dev/script.js" data-site="QSDCBJIK" defer></script>
+  </body>
+</html>

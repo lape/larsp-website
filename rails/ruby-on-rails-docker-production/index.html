@@ -31,14 +31,17 @@
 
 <p>Docker is great. Clean separation of applications, neatly defined versions of the underlying software and languages lead to consistent, replicable testing and deployments in all kinds of environments. Not only during development, but also for production.</p>
 
+<p>There are several</p>
+
 <p>Maybe not all three database clients MySQL/PostgreSQL/SQLite that are included in the Dockerfile are necessary for your application, so omit what isn’t needed.</p>
 
 <h3 id="dockerfile">Dockerfile</h3>
 
 <div class="language-docker highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Ruby on Rails application in production mode</span>
-<span class="k">FROM</span><span class="s"> ruby:3.1.1</span>
+<span class="k">FROM</span><span class="s"> ruby:3.1.2</span>
 <span class="k">RUN </span>curl <span class="nt">-sL</span> https://deb.nodesource.com/setup_14.x | bash -
-<span class="k">RUN </span>apt-get update <span class="nt">-qq</span> <span class="o">&amp;&amp;</span> apt-get <span class="nb">install</span> <span class="nt">-qq</span> <span class="nt">--no-install-recommends</span> <span class="se">\
+<span class="k">RUN </span>apt-get update <span class="nt">-qq</span> <span class="o">&amp;&amp;</span> <span class="se">\
+</span>  apt-get <span class="nb">install</span> <span class="nt">-qq</span> <span class="nt">--no-install-recommends</span> <span class="se">\
 </span>  nodejs <span class="se">\
 </span>  mariadb-client <span class="se">\
 </span>  postgresql-client <span class="se">\
@@ -55,7 +58,8 @@
 <span class="k">ENV</span><span class="s"> RAILS_ENV production</span>
 <span class="k">ENV</span><span class="s"> RACK_ENV production</span>
 <span class="k">COPY</span><span class="s"> . ./</span>
-<span class="k">RUN </span><span class="nv">SECRET_KEY_BASE</span><span class="o">=</span><span class="sb">`</span>bundle <span class="nb">exec </span>rails secret<span class="sb">`</span> bundle <span class="nb">exec </span>rails assets:precompile
+<span class="k">RUN </span><span class="nv">SECRET_KEY_BASE</span><span class="o">=</span><span class="sb">`</span>bundle <span class="nb">exec </span>rails secret<span class="sb">`</span> <span class="se">\
+</span>  bundle <span class="nb">exec </span>rails assets:precompile
 <span class="k">EXPOSE</span><span class="s"> 3000</span>
 <span class="k">CMD</span><span class="s"> bundle exec rails s -e production -p 3000</span>
 </code></pre></div></div>
