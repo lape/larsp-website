@@ -45,3 +45,5 @@ Extend with a Github action to build on commit (similar to [autobuilding this Br
 Combine with nginx or [Traefik](https://github.com/traefik/traefik) as load balancer/reverse proxy.
 
 Using nginx an additional certbot container is needed to generate and renew Letsencrypt TLS certificates. Traefik will handle this by itself.
+
+Another great option is to use the excellent [fly.io](https://fly.io) service, which runs your Docker image on [Firecracker](https://firecracker-microvm.github.io) microVMs on its global infrastructure.
