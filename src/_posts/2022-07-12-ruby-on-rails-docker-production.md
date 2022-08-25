@@ -6,8 +6,6 @@ category: rails
 
 Docker is great. Clean separation of applications, neatly defined versions of the underlying software and languages lead to consistent, replicable testing and deployments in all kinds of environments. Not only during development, but also for production.
 
-There are several
-
 Maybe not all three database clients MySQL/PostgreSQL/SQLite that are included in the Dockerfile are necessary for your application, so omit what isn't needed.
 
 ### Dockerfile
@@ -46,4 +44,4 @@ Combine with nginx or [Traefik](https://github.com/traefik/traefik) as load bala
 
 Using nginx an additional certbot container is needed to generate and renew Letsencrypt TLS certificates. Traefik will handle this by itself.
 
-Another great option is to use the excellent [fly.io](https://fly.io) service, which runs your Docker image on [Firecracker](https://firecracker-microvm.github.io) microVMs on its global infrastructure.
+Another great option is to use the excellent [fly.io](https://fly.io) service, which runs your Docker image on [Firecracker](https://firecracker-microvm.github.io) microVMs on their global infrastructure.
