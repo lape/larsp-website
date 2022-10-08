@@ -4,7 +4,7 @@ layout: default
 
 # Welcome to larsp's personal site
 
-Hi, I'm Lars - Independent Drupal and Ruby on Rails software engineer. This is my personal website where I write about my journey as a full stack developer and take notes on things I’ve learned along the way.
+Hi, I'm Lars - a German Ruby on Rails and Drupal software developer from Germany. This is my personal website where I write about my journey as a full stack developer and take notes on things I’ve learned along the way.
 
 If you like, you can read more [about me](/about) or how [this website](/webtech/bridgetown/) was made.
 
