@@ -122,9 +122,9 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  bridgetown
+  bridgetown (~> 1.1)
   bridgetown-feed (~> 2.1)
   puma (~> 5.6)
 
 BUNDLED WITH
-   2.3.12
+   2.3.22
