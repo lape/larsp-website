@@ -22,5 +22,6 @@ If you like, you can read more [about me](/about) or how [this website](/webtech
 
 ----
 
-Made with [Bridgetown](/webtech/bridgetown/)
+<a rel="me" href="https://ruby.social/@lape"><i data-feather="user"></i></a>&nbsp;&nbsp;<a href="https://twitter.com/lape"><i data-feather="twitter"></i></a>&nbsp;&nbsp;<a href="mailto:hello@larsp.dev"><i data-feather="mail"></i></a>&nbsp;&nbsp;<a href="https://github.com/lape"><i data-feather="github"></i></a>
+{:style="text-align:center"}
 {:style="text-align:center"}
