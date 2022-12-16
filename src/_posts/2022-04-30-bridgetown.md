@@ -14,7 +14,7 @@ There is an undeniable appeal to static websites. Fast and simple, solid and sta
 
 ## Build and deploy on Github
 
-Thanks to [@andrewmcodes](https://twitter.com/andrewmcodes) for the writeup on [how to setup the Bridgetown Github Pages plugin](https://andrewm.codes/deploy-bridgetown-to-github-pages/) to automatically publish a site when pushing new content.
+Thanks to [@andrewmcodes](https://ruby.social/@andrewmcodes) for the writeup on [how to setup the Bridgetown Github Pages plugin](https://andrewm.codes/deploy-bridgetown-to-github-pages/) to automatically publish a site when pushing new content.
 
 I noticed that in order to get the deployment working with a custom domain the _cname_ setting has to be included in the workflow file:
 
