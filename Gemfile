@@ -29,3 +29,5 @@ gem 'bridgetown', '~> 1.1'
 gem 'puma', '~> 5.6'
 
 gem 'bridgetown-feed', '~> 2.1', group: :bridgetown_plugins
+
+gem 'ruby-lsp', '~> 0.3.7', group: :development
