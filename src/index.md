@@ -6,7 +6,7 @@ layout: default
 
 Hi, I'm Lars - a German Ruby on Rails and Drupal software developer from Germany. This is my personal website where I write about my journey as a full stack developer and take notes on things I’ve learned along the way.
 
-If you like, you can read more [about me](/about) or how [this website](/webtech/bridgetown/) was made.
+If you like, you can read more [about me](/about), how [this website](/webtech/bridgetown/) was made or what I'm up to [now](/now).
 
 ### Blog posts:
 
@@ -18,7 +18,8 @@ If you like, you can read more [about me](/about) or how [this website](/webtech
   <% end %>
 </ul>
 
-<a href="https://larsp.dev/feed.xml">Subscribe to Atom feed</a>
+<i data-feather="rss" style="vertical-align: text-bottom;"></i> Atom/RSS feed: <a href="https://larsp.dev/feed.xml">
+ Subscribe</a>
 
 ----
 
