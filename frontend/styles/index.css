@@ -84,3 +84,7 @@ hr {
   border-top: 2px dotted #bbb;
   margin: 3rem 0;
 }
+
+img {
+  max-width: 100%;
+}
