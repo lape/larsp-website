@@ -6,7 +6,7 @@
 <title>Ruby on Rails with Docker in production | larsp.dev</title>
 
 <link type="application/atom+xml" rel="alternate" href="https://larsp.dev/feed.xml" title="larsp.dev" />
-<link rel="stylesheet" href="/_bridgetown/static/index.5D6DGW5F.css" />
+<link rel="stylesheet" href="/_bridgetown/static/index.KU4ZWSHX.css" />
 <script src="/_bridgetown/static/index.PJZZ2K4I.js" defer></script>
 <script src="https://unpkg.com/feather-icons"></script>
 
@@ -30,14 +30,19 @@
     <main>
       <h1>Ruby on Rails with Docker in production</h1>
 
-<p>Docker is great. Clean separation of applications, neatly defined versions of the underlying software and languages lead to consistent, replicable testing and deployments in all kinds of environments. Not only during development, but also for production.</p>
+<p>Docker is a fantastic tool that allows developers to create and deploy applications in a consistent and predictable way. It offers the ability to create clean separations between different applications, ensuring that developers can work on multiple projects without worrying about conflicting dependencies or software versions. Additionally, Docker provides a way to define specific versions of software and runtime environments, which ensures that the application runs consistently across different environments. This is particularly useful for testing and deployment, as it allows developers to replicate the environment across different platforms, making it easy to deploy the application to production without any surprises.</p>
+
+<p>The following is best thought of as a <em>minimal</em> Ruby on Rails Docker production setup. It can be further build on e.g. by using an incremental build process (with several layers).</p>
 
 <p>Maybe not all three database clients MySQL/PostgreSQL/SQLite that are included in the Dockerfile are necessary for your application, so omit what isn’t needed.</p>
+
+<p><img src="/images/venti-views-1cqIcrWFQBI-unsplash.jpg" alt="Container ship" />
+<em>Photo by <a href="https://unsplash.com/@ventiviews?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Venti Views</a></em></p>
 
 <h3 id="dockerfile">Dockerfile</h3>
 
 <div class="language-docker highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Ruby on Rails application in production mode</span>
-<span class="k">FROM</span><span class="s"> ruby:3.1.2</span>
+<span class="k">FROM</span><span class="s"> ruby:3.1.3</span>
 <span class="k">RUN </span>curl <span class="nt">-sL</span> https://deb.nodesource.com/setup_14.x | bash -
 <span class="k">RUN </span>apt-get update <span class="nt">-qq</span> <span class="o">&amp;&amp;</span> <span class="se">\
 </span>  apt-get <span class="nb">install</span> <span class="nt">-qq</span> <span class="nt">--no-install-recommends</span> <span class="se">\
@@ -63,7 +68,7 @@
 <span class="k">CMD</span><span class="s"> bundle exec rails s -e production -p 3000</span>
 </code></pre></div></div>
 
-<p>Extend with a Github action to build on commit (similar to <a href="/webtech/bridgetown/">autobuilding this Bridgetown site</a>) and push the image to a repository like Docker Hub or Amazon ECR.</p>
+<p>Extend with a GitHub action to build on commit (similar to <a href="/webtech/bridgetown/">autobuilding this Bridgetown site</a>) and push the image to a repository like Docker Hub or Amazon ECR.</p>
 
 <p>Combine with nginx or <a href="https://github.com/traefik/traefik">Traefik</a> as load balancer/reverse proxy.</p>
 
