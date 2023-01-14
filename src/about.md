@@ -9,6 +9,10 @@ When not in the office, I enjoy travelling, being on the water windsurfing, SUPp
 
 You can find some notes what I'm currently up to on my [now page](/now).
 
+![Düsseldorf Media Harbour](/images/dus-mediaharbour.jpeg)
+*View over the Düsseldorf <a href="https://www.duesseldorf.de/international/tourism/discover/media-harbour.html
+">Media Harbour</a> from my office there.*
+
 ---
 
 <a rel="me" href="https://ruby.social/@lape"><i data-feather="message-circle"></i></a>&nbsp;&nbsp;<a href="mailto:hello@larsp.dev"><i data-feather="mail"></i></a>&nbsp;&nbsp;<a href="https://github.com/lape"><i data-feather="github"></i></a>
