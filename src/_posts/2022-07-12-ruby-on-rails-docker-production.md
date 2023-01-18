@@ -45,8 +45,8 @@ CMD bundle exec rails s -e production -p 3000
 
 Extend with a GitHub action to build on commit (similar to [autobuilding this Bridgetown site](/webtech/bridgetown/)) and push the image to a repository like Docker Hub or Amazon ECR.
 
-Combine with nginx or [Traefik](https://github.com/traefik/traefik) as load balancer/reverse proxy.
+Combine with nginx or [Traefik](https://github.com/traefik/traefik/) as load balancer/reverse proxy.
 
 Using nginx an additional certbot container is needed to generate and renew Letsencrypt TLS certificates. Traefik will handle this by itself.
 
-Another great option is to use the excellent [fly.io](https://fly.io) service, which runs your Docker image on [Firecracker](https://firecracker-microvm.github.io) microVMs on their global infrastructure.
+Another great option is to use the excellent [fly.io](https://fly.io/) service, which runs your Docker image on [Firecracker](https://firecracker-microvm.github.io/) microVMs on their global infrastructure.

@@ -3,7 +3,7 @@ layout: page
 title: What I'm up to now
 ---
 
-Inspired by <a href="https://sive.rs/nowff">Derek Sivers</a> this is just a fun page for sharing what my current focus is:
+Inspired by <a href="https://sive.rs/nowff/">Derek Sivers</a> this is just a fun page for sharing what my current focus is:
 
 ## Working on
 

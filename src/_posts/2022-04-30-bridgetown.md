@@ -6,7 +6,7 @@ category: webtech
 
 For this personal website, I wanted to keep it lean and minimal and the blogging software or CMS should stay out of the way. It shouldn't be a hassle to maintain or update. So in 2022 I started this site with the [Bridgetown](https://bridgetownrb.com/) static site generator. And so far, it's going well.
 
-Having become quite an avid fan of Ruby in my recent developer years, a Ruby-powered static site generator seems a good fit. Bridgetown stands on the shoulders of [Jekyll](https://jekyllrb.com), which became immensely popular through Github Pages.
+Having become quite an avid fan of Ruby in my recent developer years, a Ruby-powered static site generator seems a good fit. Bridgetown stands on the shoulders of [Jekyll](https://jekyllrb.com/), which became immensely popular through Github Pages.
 
 > _"Like the Ruby language itself, Bridgetown is optimized for web developer happiness."_
 
@@ -39,8 +39,8 @@ task :deploy => [:clean, "frontend:build"] do
 end
 ```
 
-View this site's source on [Github](https://github.com/lape/larsp-website).
+View this site's source on [Github](https://github.com/lape/larsp-website/).
 
 - [Bridgetown](https://bridgetownrb.com/)
-- [Bridgetown’s Github repo](https://github.com/bridgetownrb/bridgetown)
+- [Bridgetown’s Github repo](https://github.com/bridgetownrb/bridgetown/)
 - [How to Deploy Your Bridgetown Site to Github Pages — andrewm.codes](https://andrewm.codes/deploy-bridgetown-to-github-pages/)

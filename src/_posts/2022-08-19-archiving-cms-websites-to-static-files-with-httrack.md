@@ -10,7 +10,7 @@ That's why it's convenient to know how to easily archive a site to static HTML f
 
 ## Using the httrack tool to archive a website
 
-There are quite some options for archiving a website (see [Awesome Web Archiving List](https://github.com/iipc/awesome-web-archiving)). I prefer using the [httrack](https://www.httrack.com) command line tool. On MacOS using Homebrew install it simply with:
+There are quite some options for archiving a website (see [Awesome Web Archiving List](https://github.com/iipc/awesome-web-archiving/)). I prefer using the [httrack](https://www.httrack.com/) command line tool. On MacOS using Homebrew install it simply with:
 
 ```
 brew install httrack
@@ -38,5 +38,5 @@ If the source site uses HTTP authentication, provide username and password as pa
 The resulting files can be served from some inexpensive static web hosting like Netlify or Github Pages.
 
 * [Httrack users guide](http://www.httrack.com/html/fcguide.html)
-* [Archiving Drupal sites](https://www.drupal.org/node/27882) on drupal.org.
-* Karen from Lullabot [about archiving Drupal sites](https://www.lullabot.com/articles/sending-drupal-site-retirement-using-httrack)
+* [Archiving Drupal sites](https://www.drupal.org/node/27882/) on drupal.org.
+* Karen from Lullabot [about archiving Drupal sites](https://www.lullabot.com/articles/sending-drupal-site-retirement-using-httrack/)
