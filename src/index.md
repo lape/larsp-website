@@ -8,18 +8,9 @@ Hi, I'm Lars - a Ruby on Rails and Drupal software developer from Germany. This 
 
 If you like, you can read more [about me](/about/), how [this website](/webtech/bridgetown/) was made or what I'm up to [now](/now/).
 
-### Blog posts:
+### Blog posts
 
-<ul>
-  <% collections.posts.resources.each do |post| %>
-    <li>
-      <a href="<%= post.relative_url %>"><%= post.data.title %></a>
-    </li>
-  <% end %>
-</ul>
-
-<i data-feather="rss" style="vertical-align: text-bottom;"></i> Atom/RSS feed: <a href="https://larsp.dev/feed.xml">
- Subscribe</a>
+<%= render "posts" %>
 
 ----
 

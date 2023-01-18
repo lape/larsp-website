@@ -1,0 +1,10 @@
+<ul>
+  <% collections.posts.resources.each do |post| %>
+    <li>
+      <a href="<%= post.relative_url %>"><%= post.data.title %></a>
+    </li>
+  <% end %>
+</ul>
+
+<i data-feather="rss" style="vertical-align: text-bottom;"></i> Atom/RSS feed: <a href="https://larsp.dev/feed.xml">
+Subscribe</a>
