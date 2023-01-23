@@ -28,6 +28,10 @@ gem 'bridgetown', '~> 1.1'
 # (you can optionally limit this to the "development" group)
 gem 'puma', '~> 5.6'
 
-gem 'bridgetown-feed', '~> 2.1', group: :bridgetown_plugins
+group :bridgetown_plugins do
+  gem 'bridgetown-feed', '~> 2.1'
+end
 
-gem 'ruby-lsp', '~> 0.3.7', group: :development
+group :development do
+  gem 'ruby-lsp', '~> 0.3.7'
+end

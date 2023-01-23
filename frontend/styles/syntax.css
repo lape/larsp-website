@@ -2,7 +2,10 @@ code {
   white-space: pre-wrap;
 }
 
-.highlight .hll { background-color: #ffffcc }
+.highlighter-rouge {
+  background-color: #f8f8f8;
+}
+
 .highlight .c { color: #999988; font-style: italic } /* Comment */
 .highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
 .highlight .k { font-weight: bold } /* Keyword */
