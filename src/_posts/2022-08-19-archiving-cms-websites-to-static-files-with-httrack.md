@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Archiving CMS websites to static files with httrack"
+description: "Using httrack to archive a CMS website to keep only as static site."
 category: webtech
 ---
 

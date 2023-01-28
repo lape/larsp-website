@@ -8,8 +8,8 @@
   },
   "devDependencies": {
     "css-loader": "~6.7.1",
-    "esbuild": "~0.16.12",
-    "esbuild-loader": "~2.20.0",
+    "esbuild": "~0.17.4",
+    "esbuild-loader": "~2.21.0",
     "glob": "^7.2.0",
     "postcss": "^8.4.0",
     "postcss-flexbugs-fixes": "^5.0.2",

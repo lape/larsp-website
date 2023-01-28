@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Ruby on Rails with Docker in production"
+description: "Minimal Docker production setup for Ruby on Rails."
 category: rails
 ---
 

@@ -1,7 +1,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <% resource_title = strip_html(strip_newlines(title)) %>
-<title><% if resource_title != "Index" %><%= resource_title %> | <%= metadata.title %><% else %><%= metadata.title %>: <%= metadata.tagline %><% end %></title>
+<%= seo %>
 <% if resource_title == "Index" %><meta name="description" content="<%= metadata.description %>" /><% end %>
 <%= feed_meta %>
 <link rel="stylesheet" href="<%= webpack_path :css %>" />

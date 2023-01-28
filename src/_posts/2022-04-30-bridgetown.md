@@ -1,6 +1,7 @@
 ---
 layout: post
-title: "Bridgetown with Github Pages and custom domain"
+title: "Bridgetown with GitHub Pages and custom domain"
+description: "Configuring Bridgetown site builder with GitHub Pages auto-deployment."
 category: webtech
 ---
 
