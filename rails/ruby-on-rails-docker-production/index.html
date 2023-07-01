@@ -47,6 +47,16 @@
 
 <p>Docker is a fantastic tool that allows developers to create and deploy applications in a consistent and predictable way. It offers the ability to create clean separations between different applications, ensuring that developers can work on multiple projects without worrying about conflicting dependencies or software versions. Additionally, Docker provides a way to define specific versions of software and runtime environments, which ensures that the application runs consistently across different environments. This is particularly useful for testing and deployment, as it allows developers to replicate the environment across different platforms, making it easy to deploy the application to production without any surprises.</p>
 
+<h3 id="dokku">Dokku</h3>
+
+<p>Today we are lucky to have several nice options for containerized Rails deployment. Personally, I like the <a href="https://dokku.com">Dokku</a> hosting system. Think of Dokku as a mini-Heroku; it’s lightweight but certainly packs a punch in terms of functionality. Multi-host deployments are not (easily) possible with Dokku.</p>
+
+<h3 id="mrsk">MRSK</h3>
+
+<p>Developed by the Basecamp team and used for their Rails deployments (i.e. the HEY email service), this is a great option for multi-host setups. Imagine <a href="https://github.com/mrsked/mrsk ">MRSK</a> as Capistrano for Containers, it will provision your servers and deploy the software to it, including the right version of Ruby and other dependencies. That all lives in the Docker image now. You can boot a brand new Ubuntu (or whatever) server, add it to the list of servers in MRSK, and it’ll be auto-provisioned with Docker, ready to run.</p>
+
+<h3 id="minimal-production-dockerfile">Minimal production Dockerfile</h3>
+
 <p>The following is best thought of as a <em>minimal</em> Ruby on Rails Docker production setup. It can be further build on e.g. by using an incremental build process (with several layers).</p>
 
 <p>Maybe not all three database clients MySQL/PostgreSQL/SQLite that are included in the Dockerfile are necessary for your application, so omit what isn’t needed.</p>
@@ -57,7 +67,7 @@
 <h3 id="dockerfile">Dockerfile</h3>
 
 <div class="language-docker highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Ruby on Rails application in production mode</span>
-<span class="k">FROM</span><span class="s"> ruby:3.1.3</span>
+<span class="k">FROM</span><span class="s"> ruby:3.2.2</span>
 <span class="k">RUN </span>curl <span class="nt">-sL</span> https://deb.nodesource.com/setup_14.x | bash -
 <span class="k">RUN </span>apt-get update <span class="nt">-qq</span> <span class="o">&amp;&amp;</span> <span class="se">\
 </span>  apt-get <span class="nb">install</span> <span class="nt">-qq</span> <span class="nt">--no-install-recommends</span> <span class="se">\
@@ -77,7 +87,7 @@
 <span class="k">ENV</span><span class="s"> RAILS_ENV production</span>
 <span class="k">ENV</span><span class="s"> RACK_ENV production</span>
 <span class="k">COPY</span><span class="s"> . ./</span>
-<span class="k">RUN </span><span class="nv">SECRET_KEY_BASE</span><span class="o">=</span><span class="sb">`</span>bundle <span class="nb">exec </span>rails secret<span class="sb">`</span> <span class="se">\
+<span class="k">RUN </span><span class="nv">SECRET_KEY_BASE</span><span class="o">=</span>1 <span class="se">\
 </span>  bundle <span class="nb">exec </span>rails assets:precompile
 <span class="k">EXPOSE</span><span class="s"> 3000</span>
 <span class="k">CMD</span><span class="s"> bundle exec rails s -e production -p 3000</span>
@@ -89,7 +99,7 @@
 
 <p>Using nginx an additional certbot container is needed to generate and renew Letsencrypt TLS certificates. Traefik will handle this by itself.</p>
 
-<p>Another great option is to use the excellent <a href="https://fly.io/">fly.io</a> service, which runs your Docker image on <a href="https://firecracker-microvm.github.io/">Firecracker</a> microVMs on their global infrastructure.</p>
+<p>Another great option is to use the great <a href="https://fly.io/">fly.io</a> service, which runs your Docker image on <a href="https://firecracker-microvm.github.io/">Firecracker</a> microVMs on their global infrastructure.</p>
 
 
 Comments? Write me on <a href="https://ruby.social/@lape">Mastodon</a>.
