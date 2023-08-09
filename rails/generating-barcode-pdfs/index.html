@@ -60,7 +60,7 @@
 <span class="nb">require</span> <span class="s2">"prawn/measurement_extensions"</span>
 
 <span class="k">class</span> <span class="nc">CodePdf</span> <span class="o">&lt;</span> <span class="no">Prawn</span><span class="o">::</span><span class="no">Document</span>
-  <span class="k">def</span> <span class="nf">initialize</span> <span class="n">path</span><span class="p">,</span> <span class="n">code</span>
+  <span class="k">def</span> <span class="nf">initialize</span> <span class="n">path</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">background</span>
     <span class="k">super</span><span class="p">({</span>
       <span class="ss">page_size: </span><span class="p">[</span><span class="mi">100</span><span class="p">.</span><span class="nf">mm</span><span class="p">,</span> <span class="mi">177</span><span class="p">.</span><span class="nf">mm</span><span class="p">],</span>
       <span class="ss">margin: </span><span class="mi">0</span>
