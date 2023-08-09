@@ -51,7 +51,6 @@ def voucher
     CodePdf.new path, code, bg_path
     path
 end
-
 ```
 
 The resulting PDF looks like this:
