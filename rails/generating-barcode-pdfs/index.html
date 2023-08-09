@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Begin Bridgetown SEO tag v6.0.0 -->
+<title>Generating barcode PDFs with Rails | larsp.dev</title>
+<meta property="og:title" content="Generating barcode PDFs with Rails" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Using Barby and Prawn to imprint PDFs with individual barcodes." />
+<meta property="og:description" content="Using Barby and Prawn to imprint PDFs with individual barcodes." />
+<link rel="canonical" href="https://larsp.dev/rails/generating-barcode-pdfs/" />
+<meta property="og:url" content="https://larsp.dev/rails/generating-barcode-pdfs/" />
+<meta property="og:site_name" content="larsp.dev" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-08-09T00:00:00+02:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Generating barcode PDFs with Rails" />
+<meta name="twitter:site" content="@lape" />
+<!-- End Bridgetown SEO tag -->
+
+
+<link type="application/atom+xml" rel="alternate" href="https://larsp.dev/feed.xml" title="larsp.dev" />
+<link rel="stylesheet" href="/_bridgetown/static/index.Z4IKBEFJ.css" />
+<script src="/_bridgetown/static/index.BFEJNYGY.js" defer></script>
+<script src="https://unpkg.com/feather-icons"></script>
+
+
+  </head>
+  <body class="post ">
+    <header>
+  <h2>larsp.dev</h2>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/posts/">Blog</a></li>
+    <li><a href="/now/">Now</a></li>
+  </ul>
+</nav>
+
+
+    <main>
+      <h1>Generating barcode PDFs with Rails</h1>
+
+<p>For a project, I was researching methods to generate individual PDFs with imprinted EAN barcodes. Some of the how-tos and blog articles I found were quite old, and it was not directly obvious if the solution still works and can be recommended in 2023. The following represents my short note-taking of a decent way to do this. There may be other or better ways, but this one works for me.</p>
+
+<p><a href="https://github.com/toretore/barby">Barby</a> is a barcode generator library for Ruby. It generates a barcode as an image or as a PDF. For creating the actual PDF with background image I am using the <a href="https://github.com/prawnpdf/prawn">Prawn</a> PDF generation library for Ruby. It produces PDFs from scratch and annotates existing PDFs with text, images, and barcodes.</p>
+
+<p>I am using two model classes, one for the voucher with the <em>code</em> property (which shall be printed as a barcode), and one for the PDF generation. The PDF generation class is a subclass of <em>Prawn::Document</em>. It takes a path and a code as arguments and generates a PDF with the barcode imprinted. The voucher class creates a temporary file, calls the PDF generation class, and returns the path to the temporary file. As we are using Rails <em>Tempfile</em>, the temporary file is deleted automatically when the Rails process exits.</p>
+
+<p>The resulting PDF should be 100mm x 133mm with a png as the background image. At first, I experimented with the <em>background</em> option of <em>Prawn::Document</em>, but this did not work as expected. The background image didn’t scale to the page size. Instead, I am using the <em>image</em> method to draw the background image. The <em>fit</em> option scales the image to the page size.</p>
+
+<p>Prawn’s measurement_extensions allow the use of mm as a unit for the page size instead of the default 1/72 inch.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"barby/barcode/code_128"</span>
+<span class="nb">require</span> <span class="s2">"barby/outputter/prawn_outputter"</span>
+<span class="nb">require</span> <span class="s2">"prawn/measurement_extensions"</span>
+
+<span class="k">class</span> <span class="nc">CodePdf</span> <span class="o">&lt;</span> <span class="no">Prawn</span><span class="o">::</span><span class="no">Document</span>
+  <span class="k">def</span> <span class="nf">initialize</span> <span class="n">path</span><span class="p">,</span> <span class="n">code</span>
+    <span class="k">super</span><span class="p">({</span>
+      <span class="ss">page_size: </span><span class="p">[</span><span class="mi">100</span><span class="p">.</span><span class="nf">mm</span><span class="p">,</span> <span class="mi">177</span><span class="p">.</span><span class="nf">mm</span><span class="p">],</span>
+      <span class="ss">margin: </span><span class="mi">0</span>
+    <span class="p">})</span>
+
+    <span class="n">image</span> <span class="n">background</span><span class="p">,</span> <span class="ss">fit: </span><span class="p">[</span><span class="mi">100</span><span class="p">.</span><span class="nf">mm</span><span class="p">,</span> <span class="mi">177</span><span class="p">.</span><span class="nf">mm</span><span class="p">]</span>
+    <span class="n">barcode</span> <span class="n">code</span>
+    <span class="n">render_file</span> <span class="n">path</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">barcode</span> <span class="n">code</span>
+    <span class="n">barcode</span> <span class="o">=</span> <span class="no">Barby</span><span class="o">::</span><span class="no">Code128</span><span class="p">.</span><span class="nf">new</span> <span class="n">code</span>
+    <span class="n">barcode</span><span class="p">.</span><span class="nf">annotate_pdf</span> <span class="nb">self</span><span class="p">,</span> <span class="ss">height: </span><span class="mi">18</span><span class="p">.</span><span class="nf">mm</span><span class="p">,</span> <span class="ss">x: </span><span class="mi">17</span><span class="p">.</span><span class="nf">mm</span><span class="p">,</span> <span class="ss">y: </span><span class="mi">3</span><span class="p">.</span><span class="nf">mm</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>In the <em>code</em> class, we create a temporary file and call the PDF generation class. The background image is found in the <em>app/assets/images/{language}</em> directory. The name of the background image is stored in the <em>voucher</em> property of the <em>price</em> object (where the <em>code</em> belongs_to). The <em>voucher</em> property is a string like <em>voucher.png</em>. The <em>I18n.locale</em> method returns the current locale, e.g. <em>de</em> or <em>fr</em> which is used to find the correct background image.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">voucher</span>
+    <span class="c1"># Create temporary file e.g. tmp/voucher20230805-66997-kozjms.pdf</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="no">Tempfile</span><span class="p">.</span><span class="nf">new</span> <span class="s2">"voucher"</span><span class="p">,</span> <span class="no">Rails</span><span class="p">.</span><span class="nf">root</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s2">"tmp"</span><span class="p">)</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="n">t</span><span class="p">.</span><span class="nf">path</span> <span class="o">+</span> <span class="s2">".pdf"</span>
+    <span class="n">bg_path</span> <span class="o">=</span> <span class="no">Rails</span><span class="p">.</span><span class="nf">root</span><span class="p">.</span><span class="nf">join</span> <span class="s2">"app"</span><span class="p">,</span> <span class="s2">"assets"</span><span class="p">,</span> <span class="s2">"images"</span><span class="p">,</span> <span class="no">I18n</span><span class="p">.</span><span class="nf">locale</span><span class="p">.</span><span class="nf">to_s</span><span class="p">,</span> <span class="n">price</span><span class="p">.</span><span class="nf">voucher</span>
+    <span class="no">CodePdf</span><span class="p">.</span><span class="nf">new</span> <span class="n">path</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">bg_path</span>
+    <span class="n">path</span>
+<span class="k">end</span>
+
+</code></pre></div></div>
+
+<p>The resulting PDF looks like this:</p>
+
+<p><img src="/images/voucherpdf.png" alt="PDF with barcode" /></p>
+
+
+Comments? Contact me at <a href="https://ruby.social/@lape">@lape@ruby.social</a>
+
+    </main>
+
+    
+
+    <!-- Feather icon font -->
+    <script>feather.replace()</script>
+  </body>
+</html>
