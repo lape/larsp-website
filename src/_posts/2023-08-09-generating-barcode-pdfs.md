@@ -22,7 +22,7 @@ require "barby/outputter/prawn_outputter"
 require "prawn/measurement_extensions"
 
 class CodePdf < Prawn::Document
-  def initialize path, code
+  def initialize path, code, background
     super({
       page_size: [100.mm, 177.mm],
       margin: 0
