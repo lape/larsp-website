@@ -62,3 +62,5 @@ Combine with nginx or [Traefik](https://github.com/traefik/traefik/) as load bal
 Using nginx an additional certbot container is needed to generate and renew Letsencrypt TLS certificates. Traefik will handle this by itself.
 
 Another great option is to use the great [fly.io](https://fly.io/) service, which runs your Docker image on [Firecracker](https://firecracker-microvm.github.io/) microVMs on their global infrastructure.
+
+[Mailsnag recently posted](https://mailsnag.com/blog/optimized-ruby-dockerfile/) a comprehensive Dockerfile for production.
