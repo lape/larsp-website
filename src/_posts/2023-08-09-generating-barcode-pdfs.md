@@ -53,6 +53,7 @@ def voucher
 end
 ```
 
-The resulting PDF looks like this:
+Here is an example of the resulting voucher PDF with the barcode imprinted:
 
 ![PDF with barcode](/images/voucherpdf.png)
+{:style="text-align:center; filter:drop-shadow(5px 5px 5px #aaa)"}
