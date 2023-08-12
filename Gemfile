@@ -31,7 +31,7 @@ gem "rack", "~> 2.2"
 gem "puma", "~> 5.6"
 
 group :bridgetown_plugins do
-  gem "bridgetown-feed", "~> 2.1"
+  gem "bridgetown-feed", "~> 3.0"
 end
 
 group :development do
