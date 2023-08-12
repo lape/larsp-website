@@ -35,5 +35,5 @@ group :bridgetown_plugins do
 end
 
 group :development do
-  gem "ruby-lsp", "~> 0.3.7"
+  gem "ruby-lsp", "~> 0.8.0"
 end
