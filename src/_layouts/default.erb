@@ -1,18 +1,48 @@
-<!doctype html>
-<html lang="<%= site.locale %>">
-  <head>
-    <%= render "head", metadata: site.metadata, title: resource.data.title %>
-  </head>
-  <body class="<%= resource.data.layout %> <%= resource.data.page_class %>">
-    <%= render Shared::Navbar.new(metadata: site.metadata, resource: resource) %>
+<!DOCTYPE html>
+<html lang="en">
 
-    <main>
-      <%= yield %>
-    </main>
+<head>
+  <%= render "head" , metadata: site.metadata, title: resource.data.title %>
+</head>
 
-    <%= render "footer", metadata: site.metadata %>
+<body class="layout-post <%= resource.data.layout %> <%= resource.data.page_class %>">
+
+  <%= render Shared::Navbar.new(metadata: site.metadata, resource: resource) %>
+
+    <div class="site-content">
+
+      <div class="container">
+
+        <div class="mainheading">
+          <p class="lead">
+            larsp’s personal site
+          </p>
+        </div>
+
+        <div class="main-content">
+          <%= yield %>
+        </div>
+
+      </div>
+
+      <footer class="footer">
+        <%= render "footer" , metadata: site.metadata %>
+      </footer>
+
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+      integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+      crossorigin="anonymous"></script>
+
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+      integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+      crossorigin="anonymous"></script>
 
     <!-- Feather icon font -->
     <script>feather.replace()</script>
-  </body>
+</body>
+
 </html>

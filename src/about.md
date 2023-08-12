@@ -3,6 +3,8 @@ layout: page
 title: About
 ---
 
+# About me
+
 I'm Lars, a web software developer from Germany. I develop and operate web applications with Ruby on Rails and the Drupal content management system for my clients. Another field of work is telephony applications (IVR - Interactive Voice Response) with the FreeSWITCH and Asterisk open-source telephony frameworks. Most services run on AWS infrastructure.
 
 When not in the office, I enjoy travelling, being on the water windsurfing, paddling, biking or hiking. I also volunteer for the local chamber of commerce as a member of the examination board for IT vocations.

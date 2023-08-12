@@ -2,9 +2,59 @@
 layout: default
 ---
 
-<h1><%= resource.data.title %></h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2 pl-0">
+      <div class="share sticky-top sticky-top-offset">
+        <p>
+          Share
+        </p>
+        <ul>
 
-<%= yield %>
+          <li class="ml-1 mr-1">
+            <a target="_blank" href="https://ruby.social/web/statuses/new"
+              rel="nofollow"
+              onclick="window.open(this.href, 'mastodon-share', 'width=550,height=435');return false;">
+              <i class="fab fa-mastodon"></i>
+            </a>
+          </li>
+
+          <li class="ml-1 mr-1">
+            <a target="_blank"
+              href="https://twitter.com/intent/tweet?text=<%= resource.data.title %>&url=<%= resource.absolute_url %>"
+              onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+
+          <li class="ml-1 mr-1">
+            <a target="_blank"
+              href="https://www.linkedin.com/shareArticle?mini=true&url=<%= resource.absolute_url %>"
+              onclick="window.open(this.href, 'width=550,height=435');return false;">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="col-md-9 flex-first flex-md-unordered">
+      <div class="mainheading">
+        <h1 class="posttitle">
+          <%= resource.data.title %>
+        </h1>
+      </div>
+
+      <div class="article-post">
+        <%= yield %>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 <hr>
-Comments are welcome - Reach me on Mastodon: <a href="https://ruby.social/@lape">@lape@ruby.social</a>
+Comments are welcome - Reach me on Mastodon: <a
+  href="https://ruby.social/@lape">@lape@ruby.social</a>

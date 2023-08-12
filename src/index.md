@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 ---
 
 # Welcome to larsp's personal site

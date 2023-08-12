@@ -4,7 +4,7 @@ title: Posts
 description: "Index of blog posts on this site."
 ---
 
-### Blog posts
+# Blog posts
 
 <%= render "posts" %>
 

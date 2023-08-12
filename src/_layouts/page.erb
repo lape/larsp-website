@@ -2,6 +2,21 @@
 layout: default
 ---
 
-<h1><%= resource.data.title %></h1>
+<section>
+  <div class="article-post">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2 pl-0">
+        </div>
 
-<%= yield %>
+        <div class="col-md-9 flex-first flex-md-unordered">
+          <div class="mainheading">
+          </div>
+          <div class="article-post">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

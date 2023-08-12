@@ -1,12 +1,36 @@
-<header>
-  <h2>larsp.dev</h2>
-</header>
+<nav
+  class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
 
-<nav>
-  <ul>
-    <li><a href="<%= relative_url '/' %>">Home</a></li>
-    <li><a href="<%= relative_url '/about/' %>">About</a></li>
-    <li><a href="<%= relative_url '/posts/' %>">Blog</a></li>
-    <li><a href="<%= relative_url '/now/' %>">Now</a></li>
-  </ul>
+  <div class="container pr-0">
+
+    <a class="navbar-brand" href="/">
+      <h1 class="sitetitle">larsp.dev</h1>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+      data-target="#navbarMediumish" aria-controls="navbarSupportedContent"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarMediumish">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/about/">About</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/posts/">Blog</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/now/">Now</a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </nav>
