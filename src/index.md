@@ -15,4 +15,3 @@ If you like, you can read more [about me](/about/), how [this website](/webtech/
 ----
 
 <a rel="me" href="https://ruby.social/@lape"><i data-feather="message-circle"></i></a>&nbsp;&nbsp;<a href="mailto:hello@larsp.dev"><i data-feather="mail"></i></a>&nbsp;&nbsp;<a href="https://github.com/lape"><i data-feather="github"></i></a>
-{:style="text-align:center"}
