@@ -17,23 +17,21 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # This will help ensure the proper Bridgetown version is running.
 ####
 
+# Puma is a Rack-compatible server used by Bridgetown
+# (you can optionally limit this to the "development" group)
+gem "puma", "~> 5.6"
+gem "rack", "~> 2.2"
+
 # If you need to upgrade/switch Bridgetown versions, change the line below
 # and then run `bundle update bridgetown`
-gem "bridgetown", "~> 1.2"
-gem "bridgetown-seo-tag", "~> 6.0"
-gem "rack", "~> 2.2"
+gem "bridgetown"
+gem "bridgetown-seo-tag"
+gem "bridgetown-feed"
 
 # Uncomment to add file-based dynamic routing to your project:
 # gem "bridgetown-routes", "~> 1.0.0", group: :bridgetown_plugins
 
-# Puma is a Rack-compatible server used by Bridgetown
-# (you can optionally limit this to the "development" group)
-gem "puma", "~> 5.6"
-
-group :bridgetown_plugins do
-  gem "bridgetown-feed", "~> 3.0"
-end
-
 group :development do
+  # Standard Ruby formatter and linter
   gem "standard"
 end

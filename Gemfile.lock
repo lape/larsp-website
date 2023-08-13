@@ -139,9 +139,9 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  bridgetown (~> 1.2)
-  bridgetown-feed (~> 3.0)
-  bridgetown-seo-tag (~> 6.0)
+  bridgetown
+  bridgetown-feed
+  bridgetown-seo-tag
   puma (~> 5.6)
   rack (~> 2.2)
   standard
