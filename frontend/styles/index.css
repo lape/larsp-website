@@ -296,6 +296,14 @@ span.post-read-more a:hover {
   margin: .5rem 0 0;
 }
 
+.navbar-light .navbar-nav .nav-link {
+  color: #fd5956;
+}
+
+.navbar-light .navbar-nav a.nav-link:hover {
+  color: #b63f3d;
+}
+
 .mediumnavigation .nav-item,
 .dropdown-menu {
   font-size: 0.9rem;
