@@ -5,7 +5,7 @@ description: "Configuring Bridgetown site builder with GitHub Pages auto-deploym
 category: webtech
 ---
 
-For this personal website, I wanted to keep it lean and minimal and the blogging software or CMS should stay out of the way. It shouldn't be a hassle to maintain or update. So in 2022 I started this site with the [Bridgetown](https:/www.bridgetownrb.com) static site generator. And so far, it's going well.
+For this personal website, I wanted to keep it lean and minimal and the blogging software or CMS should stay out of the way. It shouldn't be a hassle to maintain or update. So in 2022 I started this site with the [Bridgetown](https://www.bridgetownrb.com/) static site generator. And so far, it's going well.
 
 Having become quite an avid fan of Ruby in my recent developer years, a Ruby-powered static site generator seems a good fit. Bridgetown stands on the shoulders of [Jekyll](https://jekyllrb.com/), which became immensely popular through Github Pages.
 
@@ -15,7 +15,7 @@ There is an undeniable appeal to static websites. Fast and simple, solid and sta
 
 ## Build and deploy on Github
 
-Thanks to [@andrewmcodes](https://ruby.social/@andrewmcodes) for the writeup on [how to setup the Bridgetown Github Pages plugin](https://andrewm.codes/deploy-bridgetown-to-github-pages/) to automatically publish a site when pushing new content.
+Thanks to [@andrewmcodes](https://ruby.social/@andrewmcodes/) for the writeup on [how to setup the Bridgetown Github Pages plugin](https://andrewm.codes/deploy-bridgetown-to-github-pages/) to automatically publish a site when pushing new content.
 
 I noticed that in order to get the deployment working with a custom domain the _cname_ setting has to be included in the workflow file:
 
@@ -40,8 +40,8 @@ task :deploy => [:clean, "frontend:build"] do
 end
 ```
 
-View this site's source on [Github](https://github.com/lape/larsp-website).
+View this site's source on [Github](https://github.com/lape/larsp-website/).
 
-- [Bridgetown](https://www.bridgetownrb.com)
-- [Bridgetown’s Github repo](https://github.com/bridgetownrb/bridgetown)
-- [How to Deploy Your Bridgetown Site to Github Pages — andrewm.codes](https://andrewm.codes/deploy-bridgetown-to-github-pages)
+- [Bridgetown](https://www.bridgetownrb.com/)
+- [Bridgetown’s Github repo](https://github.com/bridgetownrb/bridgetown/)
+- [How to Deploy Your Bridgetown Site to Github Pages — andrewm.codes](https://andrewm.codes/deploy-bridgetown-to-github-pages/)
