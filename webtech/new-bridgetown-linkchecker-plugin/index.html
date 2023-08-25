@@ -5,18 +5,18 @@
   <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!-- Begin Bridgetown SEO tag v6.0.0 -->
-<title>Archiving CMS websites to static files with httrack | larsp.dev</title>
-<meta property="og:title" content="Archiving CMS websites to static files with httrack" />
+<title>Bridgetown linkchecker plugin | larsp.dev</title>
+<meta property="og:title" content="Bridgetown linkchecker plugin" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Using httrack to archive a CMS website to keep only as static site." />
-<meta property="og:description" content="Using httrack to archive a CMS website to keep only as static site." />
-<link rel="canonical" href="https://larsp.dev/webtech/archiving-cms-websites-to-static-files-with-httrack/" />
-<meta property="og:url" content="https://larsp.dev/webtech/archiving-cms-websites-to-static-files-with-httrack/" />
+<meta name="description" content="Validate external links in your Bridgetown site" />
+<meta property="og:description" content="Validate external links in your Bridgetown site" />
+<link rel="canonical" href="https://larsp.dev/webtech/new-bridgetown-linkchecker-plugin/" />
+<meta property="og:url" content="https://larsp.dev/webtech/new-bridgetown-linkchecker-plugin/" />
 <meta property="og:site_name" content="larsp.dev" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2022-08-19T00:00:00+02:00" />
+<meta property="article:published_time" content="2023-08-25T14:38:43+02:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Archiving CMS websites to static files with httrack" />
+<meta property="twitter:title" content="Bridgetown linkchecker plugin" />
 <meta name="twitter:site" content="@lape" />
 <!-- End Bridgetown SEO tag -->
 
@@ -98,7 +98,7 @@
 
           <li class="ml-1 mr-1">
             <a target="_blank"
-              href="https://twitter.com/intent/tweet?text=Archiving CMS websites to static files with httrack&url=https://larsp.dev/webtech/archiving-cms-websites-to-static-files-with-httrack/"
+              href="https://twitter.com/intent/tweet?text=Bridgetown linkchecker plugin&url=https://larsp.dev/webtech/new-bridgetown-linkchecker-plugin/"
               onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
               <i class="fab fa-twitter"></i>
             </a>
@@ -106,7 +106,7 @@
 
           <li class="ml-1 mr-1">
             <a target="_blank"
-              href="https://www.linkedin.com/shareArticle?mini=true&url=https://larsp.dev/webtech/archiving-cms-websites-to-static-files-with-httrack/"
+              href="https://www.linkedin.com/shareArticle?mini=true&url=https://larsp.dev/webtech/new-bridgetown-linkchecker-plugin/"
               onclick="window.open(this.href, 'width=550,height=435');return false;">
               <i class="fab fa-linkedin-in"></i>
             </a>
@@ -120,46 +120,18 @@
     <div class="col-md-9 flex-first flex-md-unordered">
       <div class="mainheading">
         <h1 class="posttitle">
-          Archiving CMS websites to static files with httrack
+          Bridgetown linkchecker plugin
         </h1>
       </div>
 
       <div class="article-post">
-        <p>When a website made with a content management system like Drupal or Wordpress is no longer updated with content or a campaign has ended, sometimes the webpages need to be archived for reference or just stay online without any more changes. But it’s not always possible to upgrade all of the CMS along the way. Maybe there’s a major version change and it’s not economically reasonable to upgrade the custom modules for a site no longer in production use.</p>
+        <p>This site is using <a href="/webtech/bridgetown">Bridgetown</a> as static site generator. I’ve written a plugin to validate external links in your site. It’s called bridgetown_linkchecker and you can find it on <a href="">GitHub</a> and <a href="https://rubygems.org/gems/bridgetown_linkchecker">RubyGems</a>.</p>
 
-<p>That’s why it’s convenient to know how to easily archive a site to static HTML files.</p>
+<p>My motivation was that external links in your content tend to go stale and while they should theoretically persist “until the end of the internet” (as <a href="https://37signals.com/policies/until-the-end-of-the-internet/">37signals</a> call it in regard to their SaaS products), they sometimes move somewhere else or disappear altogether.</p>
 
-<h2 id="using-the-httrack-tool-to-archive-a-website">Using the httrack tool to archive a website</h2>
+<p>During the build process (or while running <code class="highlighter-rouge">bridgetown serve</code>), the plugin will check all external links in your site. If a link is broken, it will be reported in the build log. By default the checks will be done in your development environment. You can also enable the checks in production (?).</p>
 
-<p>There are quite some options for archiving a website (see <a href="https://github.com/iipc/awesome-web-archiving">Awesome Web Archiving List</a>). I prefer using the <a href="https://www.httrack.com">httrack</a> command line tool. On MacOS using Homebrew install it simply with:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew install httrack
-</code></pre></div></div>
-
-<p>These seem optimal httrack options for mirroring:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>httrack http://SITE_TO_ARCHIVE <span class="nt">-O</span> DESTINATION_DIR <span class="nt">-N</span> <span class="s2">"%h%p/%n/index%[page].%t"</span> <span class="se">\</span>
-  <span class="nt">-WqQ</span>%v <span class="nt">--robots</span><span class="o">=</span>0 <span class="nt">--footer</span> <span class="s1">''</span>
-</code></pre></div></div>
-
-<p>The tool will prompt you if external links should be followed.</p>
-
-<p>If you like, relative links can also be rewritten afterwards e.g. “about.html” to “about”. This is optional but useful if you want to preserve the URL paths (for inbound links).</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find <span class="nb">.</span> <span class="nt">-name</span> <span class="s2">"*.html"</span> <span class="nt">-type</span> f <span class="nt">-print0</span> | xargs <span class="nt">-0</span> perl <span class="nt">-i</span> <span class="nt">-pe</span> <span class="s2">"s/</span><span class="se">\/</span><span class="s2">index.html/</span><span class="se">\/</span><span class="s2">/g"</span>
-</code></pre></div></div>
-
-<p>Copy the homepage index index/index.html to the site root and change include paths and links in it (remove “../” everywhere).</p>
-
-<p>If the source site uses HTTP authentication, provide username and password as part of the URL: username:password@your.url</p>
-
-<p>The resulting files can be served from some inexpensive static web hosting like Netlify or Github Pages.</p>
-
-<ul>
-  <li><a href="http://www.httrack.com/html/fcguide.html">Httrack users guide</a></li>
-  <li><a href="https://www.drupal.org/node/27882">Archiving Drupal sites</a> on drupal.org.</li>
-  <li>Karen from Lullabot <a href="https://www.lullabot.com/articles/sending-drupal-site-retirement-using-httrack">about archiving Drupal sites</a></li>
-</ul>
+<p>Note: The guidelines for naming plugins for Bridgetown changed from dash- to underscore-separated names recently. Many plugins are still using the old naming scheme. I’ve decided to use the new naming scheme for my plugin.</p>
 
       </div>
 
