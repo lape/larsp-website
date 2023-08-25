@@ -9,12 +9,11 @@ Docker is a fantastic tool that allows developers to create and deploy applicati
 
 ### Dokku
 
-Today we are lucky to have several nice options for containerized Rails deployment. Personally, I like the <a href="https://dokku.com">Dokku</a> hosting system. Think of Dokku as a mini-Heroku; it's lightweight but certainly packs a punch in terms of functionality. Multi-host deployments are not (easily) possible with Dokku.
+Today we are lucky to have several nice options for containerized Rails deployment. Personally, I like the [Dokku](https://dokku.com) hosting system. Think of Dokku as a mini-Heroku; it's lightweight but certainly packs a punch in terms of functionality. Multi-host deployments are not (easily) possible with Dokku.
 
 ### MRSK
 
-Developed by the Basecamp team and used for their Rails deployments (i.e. the HEY email service), this is a great option for multi-host setups. Imagine <a href="https://github.com/mrsked/mrsk
-">MRSK</a> as Capistrano for Containers, it will provision your servers and deploy the software to it, including the right version of Ruby and other dependencies. That all lives in the Docker image now. You can boot a brand new Ubuntu (or whatever) server, add it to the list of servers in MRSK, and it'll be auto-provisioned with Docker, ready to run.
+Developed by the Basecamp team and used for their Rails deployments (i.e. the HEY email service), this is a great option for multi-host setups. Imagine [MRSK](https://github.com/mrsked/mrsk) as Capistrano for Containers, it will provision your servers and deploy the software to it, including the right version of Ruby and other dependencies. That all lives in the Docker image now. You can boot a brand new Ubuntu (or whatever) server, add it to the list of servers in MRSK, and it'll be auto-provisioned with Docker, ready to run.
 
 ### Minimal production Dockerfile
 
@@ -23,7 +22,7 @@ The following is best thought of as a _minimal_ Ruby on Rails Docker production 
 Maybe not all three database clients MySQL/PostgreSQL/SQLite that are included in the Dockerfile are necessary for your application, so omit what isn't needed.
 
 ![Container ship](/images/venti-views-1cqIcrWFQBI-unsplash.jpg)
-*Photo by <a href="https://unsplash.com/@ventiviews?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Venti Views</a>*
+*Photo by [Venti Views](https://unsplash.com/@ventiviews?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
 
 ### Dockerfile
 

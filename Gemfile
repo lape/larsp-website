@@ -27,7 +27,7 @@ gem "rack", "~> 2.2"
 gem "bridgetown"
 gem "bridgetown-seo-tag"
 gem "bridgetown-feed"
-# gem "bridgetown_linkchecker", path: "./bridgetown_linkchecker"
+gem "bridgetown_linkchecker"
 
 # Uncomment to add file-based dynamic routing to your project:
 # gem "bridgetown-routes", "~> 1.0.0", group: :bridgetown_plugins

@@ -51,10 +51,17 @@ layout: default
         <%= yield %>
       </div>
 
+      <hr>
+
+      <div class="commentbox"></div>
+      <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+      <script>commentBox('5766294217424896-proj', {
+        sortOrder: 'oldest'
+      })</script>
     </div>
   </div>
 </div>
 
 <hr>
-Comments are welcome - Reach me on Mastodon: <a
+Comments very welcome - Reach me on <i class="fa-brands fa-mastodon"></i> Mastodon: <a
   href="https://ruby.social/@lape">@lape@ruby.social</a>

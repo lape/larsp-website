@@ -10,4 +10,4 @@ description: "Index of blog posts on this site."
 
 ----
 
-Made with [Bridgetown](/webtech/bridgetown/)
+Made with [Bridgetown](/webtech/bridgetown)
