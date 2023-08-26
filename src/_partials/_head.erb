@@ -2,11 +2,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <% resource_title = strip_html(strip_newlines(title)) %>
 <%= seo %>
-<% if resource_title == "Index" %><meta name="description" content="<%= metadata.description %>" /><% end %>
+<% if resource_title == "Index" %><meta name="description" content="<%= metadata.description %>"><% end %>
 <%= feed_meta %>
 <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<link rel="stylesheet" href="<%= webpack_path :css %>" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="<%= webpack_path :css %>">
 <script src="<%= webpack_path :js %>" defer></script>
 <link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
 

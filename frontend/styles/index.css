@@ -284,7 +284,7 @@ span.post-read-more a:hover {
 .mediumnavigation .form-inline .btn:hover,
 .mediumnavigation .form-inline .btn:active {
   background: transparent;
-  color: green;
+  color: #fd5956;
 }
 
 .mediumnavigation .navbar-brand {
@@ -298,10 +298,12 @@ span.post-read-more a:hover {
 
 .navbar-light .navbar-nav .nav-link {
   color: #fd5956;
+  font-weight: 600;
 }
 
 .navbar-light .navbar-nav a.nav-link:hover {
   color: #b63f3d;
+  font-weight: 600;
 }
 
 .mediumnavigation .nav-item,
@@ -543,8 +545,8 @@ ul.tags li a:hover {
 }
 
 .btn.follow {
-  border-color: #02B875;
-  color: #1C9963;
+  border-color: #fd5956;
+  color: #fd5956;
   padding: 3px 10px;
   text-align: center;
   border-radius: 999em;
@@ -553,8 +555,8 @@ ul.tags li a:hover {
 }
 
 .btn.subscribe {
-  background-color: #1C9963;
-  border-color: #1C9963;
+  background-color: #fd5956;
+  border-color: #fd5956;
   color: rgba(255, 255, 255, 1);
   fill: rgba(255, 255, 255, 1);
   border-radius: 30px;
@@ -599,8 +601,8 @@ ul.tags li a:hover {
 }
 
 .alertbar input[type="submit"] {
-  background-color: #1C9963;
-  border: 1px solid #1C9963;
+  background-color: #fd5956;
+  border: 1px solid #fd5956;
   color: rgba(255, 255, 255, 1);
   fill: rgba(255, 255, 255, 1);
   font-size: 0.85rem;

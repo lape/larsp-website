@@ -6,21 +6,30 @@ layout: default
   <div class="row">
     <div class="col-md-2 pl-0">
       <div class="share sticky-top sticky-top-offset">
-        <p>
-          Share
-        </p>
         <ul>
+          <li class="ml-1 mr-1">
+            <a href="mailto:?subject=<%= resource.data.title %>&amp;body=<%= resource.absolute_url %>" title="Share link by email" rel="_blank">
+              <i class="fa-regular fa-envelope"></i>
+            </a>
+          </li>
+
+          <li class="ml-1 mr-1">
+            <a href="#" title="Copy link to clipboard"
+              onclick="let url = document.location.href;navigator.clipboard.writeText(url)">
+              <i class="fa-regular fa-clipboard"></i>
+            </a>
+          </li>
 
           <li class="ml-1 mr-1">
             <a target="_blank" href="https://ruby.social/web/statuses/new"
-              rel="nofollow"
+              rel="nofollow" title="Share on Mastodon"
               onclick="window.open(this.href, 'mastodon-share', 'width=550,height=435');return false;">
               <i class="fab fa-mastodon"></i>
             </a>
           </li>
 
           <li class="ml-1 mr-1">
-            <a target="_blank"
+            <a target="_blank" title="Share on Twitter"
               href="https://twitter.com/intent/tweet?text=<%= resource.data.title %>&url=<%= resource.absolute_url %>"
               onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
               <i class="fab fa-twitter"></i>
@@ -28,12 +37,14 @@ layout: default
           </li>
 
           <li class="ml-1 mr-1">
-            <a target="_blank"
+            <a target="_blank" title="Share on LinkedIn"
               href="https://www.linkedin.com/shareArticle?mini=true&url=<%= resource.absolute_url %>"
               onclick="window.open(this.href, 'width=550,height=435');return false;">
               <i class="fab fa-linkedin-in"></i>
             </a>
           </li>
+
+
 
         </ul>
       </div>
