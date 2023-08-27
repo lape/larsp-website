@@ -1,4 +1,10 @@
-Bridgetown.configure do |_config|
+Bridgetown.configure do |config|
+  config.url = "https://larsp.dev"
+  config.permalink = :simple
+  config.template_engine = :erb
+  config.timezone = "Europe/Berlin"
+
+  init :"bridgetown-sitemap"
   init :"bridgetown-feed"
   init :"bridgetown-seo-tag"
   init :bridgetown_linkchecker

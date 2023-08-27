@@ -28,6 +28,7 @@ gem "bridgetown"
 gem "bridgetown-seo-tag"
 gem "bridgetown-feed"
 gem "bridgetown_linkchecker"
+gem "bridgetown-sitemap"
 
 # Uncomment to add file-based dynamic routing to your project:
 # gem "bridgetown-routes", "~> 1.0.0", group: :bridgetown_plugins

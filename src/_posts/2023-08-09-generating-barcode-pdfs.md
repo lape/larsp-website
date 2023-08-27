@@ -44,12 +44,12 @@ In the _code_ class, we create a temporary file and call the PDF generation clas
 
 ```ruby
 def voucher
-    # Create temporary file e.g. tmp/voucher20230805-66997-kozjms.pdf
-    t = Tempfile.new "voucher", Rails.root.join("tmp")
-    path = t.path + ".pdf"
-    bg_path = Rails.root.join "app", "assets", "images", I18n.locale.to_s, price.voucher
-    CodePdf.new path, code, bg_path
-    path
+  # Create temporary file e.g. tmp/voucher20230805-66997-kozjms.pdf
+  tmpfile = Tempfile.new "voucher", Rails.root.join("tmp")
+  path = tmpfile.path + ".pdf"
+  bg_path = Rails.root.join "app", "assets", "images", I18n.locale.to_s, price.voucher
+  CodePdf.new path, code, bg_path
+  path
 end
 ```
 
