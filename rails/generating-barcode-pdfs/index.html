@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,16 +23,16 @@
 <link type="application/atom+xml" rel="alternate" href="https://larsp.dev/feed.xml" title="larsp.dev" />
 <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="/_bridgetown/static/index.HSLUQD2A.css">
 <script src="/_bridgetown/static/index.6LXNISXT.js" defer></script>
 <link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 
 
 
 </head>
-
 <body class="layout-post post ">
-
   <nav
   class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
 
@@ -68,15 +67,12 @@
 </nav>
 
     <div class="site-content">
-
       <div class="container">
-
         <div class="mainheading">
           <p class="lead">
             larsp’s personal site
           </p>
         </div>
-
         <div class="main-content">
           <div class="container">
   <div class="row">
@@ -171,12 +167,12 @@
 <p>In the <em>code</em> class, we create a temporary file and call the PDF generation class. The background image is found in the <em>app/assets/images/{language}</em> directory. The name of the background image is stored in the <em>voucher</em> property of the <em>price</em> object (where the <em>code</em> belongs_to). The <em>voucher</em> property is a string like <em>voucher.png</em>. The <em>I18n.locale</em> method returns the current locale, e.g. <em>de</em> or <em>fr</em> which is used to find the correct background image.</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">voucher</span>
-    <span class="c1"># Create temporary file e.g. tmp/voucher20230805-66997-kozjms.pdf</span>
-    <span class="n">t</span> <span class="o">=</span> <span class="no">Tempfile</span><span class="p">.</span><span class="nf">new</span> <span class="s2">"voucher"</span><span class="p">,</span> <span class="no">Rails</span><span class="p">.</span><span class="nf">root</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s2">"tmp"</span><span class="p">)</span>
-    <span class="n">path</span> <span class="o">=</span> <span class="n">t</span><span class="p">.</span><span class="nf">path</span> <span class="o">+</span> <span class="s2">".pdf"</span>
-    <span class="n">bg_path</span> <span class="o">=</span> <span class="no">Rails</span><span class="p">.</span><span class="nf">root</span><span class="p">.</span><span class="nf">join</span> <span class="s2">"app"</span><span class="p">,</span> <span class="s2">"assets"</span><span class="p">,</span> <span class="s2">"images"</span><span class="p">,</span> <span class="no">I18n</span><span class="p">.</span><span class="nf">locale</span><span class="p">.</span><span class="nf">to_s</span><span class="p">,</span> <span class="n">price</span><span class="p">.</span><span class="nf">voucher</span>
-    <span class="no">CodePdf</span><span class="p">.</span><span class="nf">new</span> <span class="n">path</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">bg_path</span>
-    <span class="n">path</span>
+  <span class="c1"># Create temporary file e.g. tmp/voucher20230805-66997-kozjms.pdf</span>
+  <span class="n">tmpfile</span> <span class="o">=</span> <span class="no">Tempfile</span><span class="p">.</span><span class="nf">new</span> <span class="s2">"voucher"</span><span class="p">,</span> <span class="no">Rails</span><span class="p">.</span><span class="nf">root</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s2">"tmp"</span><span class="p">)</span>
+  <span class="n">path</span> <span class="o">=</span> <span class="n">tmpfile</span><span class="p">.</span><span class="nf">path</span> <span class="o">+</span> <span class="s2">".pdf"</span>
+  <span class="n">bg_path</span> <span class="o">=</span> <span class="no">Rails</span><span class="p">.</span><span class="nf">root</span><span class="p">.</span><span class="nf">join</span> <span class="s2">"app"</span><span class="p">,</span> <span class="s2">"assets"</span><span class="p">,</span> <span class="s2">"images"</span><span class="p">,</span> <span class="no">I18n</span><span class="p">.</span><span class="nf">locale</span><span class="p">.</span><span class="nf">to_s</span><span class="p">,</span> <span class="n">price</span><span class="p">.</span><span class="nf">voucher</span>
+  <span class="no">CodePdf</span><span class="p">.</span><span class="nf">new</span> <span class="n">path</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">bg_path</span>
+  <span class="n">path</span>
 <span class="k">end</span>
 </code></pre></div></div>
 
@@ -198,17 +194,10 @@
 </div>
 
         </div>
-
       </div>
-
       <footer class="footer">
         
       </footer>
-
     </div>
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
-
 </html>
