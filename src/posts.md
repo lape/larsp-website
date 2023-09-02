@@ -11,4 +11,4 @@ sitemap: false
 
 ----
 
-Made with [Bridgetown](/webtech/bridgetown)
+Made with [Bridgetown](/webtech/bridgetown/)

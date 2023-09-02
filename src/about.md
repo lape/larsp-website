@@ -9,11 +9,10 @@ I'm Lars, a web software developer from Germany. I develop and operate web appli
 
 When not in the office, I enjoy travelling, being on the water windsurfing, paddling, biking or hiking. I also volunteer for the local chamber of commerce as a member of the examination board for IT vocations.
 
-You can find some notes on what I'm currently up to on my [now page](/now).
+You can find some notes on what I'm currently up to on my [now page](/now/).
 
 ![Düsseldorf Media Harbour](/images/dus-mediaharbour.jpeg)
-*View over the Düsseldorf <a href="https://www.duesseldorf.de/international/tourism/discover/media-harbour.html
-">Media Harbour</a> from my office there.*
+*View across the Düsseldorf Media Harbour from my office here.*
 
 ---
 

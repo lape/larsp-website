@@ -12,14 +12,12 @@ layout: default
               <i class="fa-solid fa-envelope"></i>
             </a>
           </li>
-
           <li class="ml-1 mr-1">
             <a href="#" title="Copy link to clipboard"
               onclick="let url = document.location.href;navigator.clipboard.writeText(url)">
               <i class="fa-solid fa-clipboard"></i>
             </a>
           </li>
-
           <li class="ml-1 mr-1">
             <a target="_blank" href="https://ruby.social/web/statuses/new"
               rel="nofollow" title="Share on Mastodon"
@@ -27,7 +25,6 @@ layout: default
               <i class="fab fa-mastodon"></i>
             </a>
           </li>
-
           <li class="ml-1 mr-1">
             <a target="_blank" title="Share on Twitter"
               href="https://twitter.com/intent/tweet?text=<%= resource.data.title %>&url=<%= resource.absolute_url %>"
@@ -35,7 +32,6 @@ layout: default
               <i class="fab fa-twitter"></i>
             </a>
           </li>
-
           <li class="ml-1 mr-1">
             <a target="_blank" title="Share on LinkedIn"
               href="https://www.linkedin.com/shareArticle?mini=true&url=<%= resource.absolute_url %>"
@@ -43,27 +39,21 @@ layout: default
               <i class="fab fa-linkedin-in"></i>
             </a>
           </li>
-
-
-
         </ul>
       </div>
-
     </div>
-
     <div class="col-md-9 flex-first flex-md-unordered">
-      <div class="mainheading">
-        <h1 class="posttitle">
-          <%= resource.data.title %>
-        </h1>
-      </div>
-
-      <div class="article-post">
-        <%= yield %>
-      </div>
-
+      <article>
+        <div class="mainheading">
+          <h1 class="posttitle">
+            <%= resource.data.title %>
+          </h1>
+        </div>
+        <div class="article-post">
+          <%= yield %>
+        </div>
+      </article>
       <hr>
-
       <div class="commentbox"></div>
     </div>
   </div>
