@@ -78,14 +78,12 @@
               <i class="fa-solid fa-envelope"></i>
             </a>
           </li>
-
           <li class="ml-1 mr-1">
             <a href="#" title="Copy link to clipboard"
               onclick="let url = document.location.href;navigator.clipboard.writeText(url)">
               <i class="fa-solid fa-clipboard"></i>
             </a>
           </li>
-
           <li class="ml-1 mr-1">
             <a target="_blank" href="https://ruby.social/web/statuses/new"
               rel="nofollow" title="Share on Mastodon"
@@ -93,7 +91,6 @@
               <i class="fab fa-mastodon"></i>
             </a>
           </li>
-
           <li class="ml-1 mr-1">
             <a target="_blank" title="Share on Twitter"
               href="https://twitter.com/intent/tweet?text=Ruby on Rails with Docker in production&url=https://larsp.dev/rails/ruby-on-rails-docker-production/"
@@ -101,7 +98,6 @@
               <i class="fab fa-twitter"></i>
             </a>
           </li>
-
           <li class="ml-1 mr-1">
             <a target="_blank" title="Share on LinkedIn"
               href="https://www.linkedin.com/shareArticle?mini=true&url=https://larsp.dev/rails/ruby-on-rails-docker-production/"
@@ -109,31 +105,26 @@
               <i class="fab fa-linkedin-in"></i>
             </a>
           </li>
-
-
-
         </ul>
       </div>
-
     </div>
-
     <div class="col-md-9 flex-first flex-md-unordered">
-      <div class="mainheading">
-        <h1 class="posttitle">
-          Ruby on Rails with Docker in production
-        </h1>
-      </div>
-
-      <div class="article-post">
-        <p>Docker is a fantastic tool that allows developers to create and deploy applications in a consistent and predictable way. It offers the ability to create clean separations between different applications, ensuring that developers can work on multiple projects without worrying about conflicting dependencies or software versions. Additionally, Docker provides a way to define specific versions of software and runtime environments, which ensures that the application runs consistently across different environments. This is particularly useful for testing and deployment, as it allows developers to replicate the environment across different platforms, making it easy to deploy the application to production without any surprises.</p>
+      <article>
+        <div class="mainheading">
+          <h1 class="posttitle">
+            Ruby on Rails with Docker in production
+          </h1>
+        </div>
+        <div class="article-post">
+          <p>Docker is a fantastic tool that allows developers to create and deploy applications in a consistent and predictable way. It offers the ability to create clean separations between different applications, ensuring that developers can work on multiple projects without worrying about conflicting dependencies or software versions. Additionally, Docker provides a way to define specific versions of software and runtime environments, which ensures that the application runs consistently across different environments. This is particularly useful for testing and deployment, as it allows developers to replicate the environment across different platforms, making it easy to deploy the application to production without any surprises.</p>
 
 <h3 id="dokku">Dokku</h3>
 
-<p>Today we are lucky to have several nice options for containerized Rails deployment. Personally, I like the <a href="https://dokku.com">Dokku</a> hosting system. Think of Dokku as a mini-Heroku; it’s lightweight but certainly packs a punch in terms of functionality. Multi-host deployments are not (easily) possible with Dokku.</p>
+<p>Today we are lucky to have several nice options for containerized Rails deployment. Personally, I like the <a href="https://dokku.com/">Dokku</a> hosting system. Think of Dokku as a mini-Heroku; it’s lightweight but certainly packs a punch in terms of functionality. Multi-host deployments are not (easily) possible with Dokku.</p>
 
 <h3 id="mrsk">MRSK</h3>
 
-<p>Developed by the Basecamp team and used for their Rails deployments (i.e. the HEY email service), this is a great option for multi-host setups. Imagine <a href="https://github.com/mrsked/mrsk">MRSK</a> as Capistrano for Containers, it will provision your servers and deploy the software to it, including the right version of Ruby and other dependencies. That all lives in the Docker image now. You can boot a brand new Ubuntu (or whatever) server, add it to the list of servers in MRSK, and it’ll be auto-provisioned with Docker, ready to run.</p>
+<p>Developed by the Basecamp team and used for their Rails deployments (i.e. the HEY email service), this is a great option for multi-host setups. Imagine <a href="https://github.com/mrsked/mrsk/">MRSK</a> as Capistrano for Containers, it will provision your servers and deploy the software to it, including the right version of Ruby and other dependencies. That all lives in the Docker image now. You can boot a brand new Ubuntu (or whatever) server, add it to the list of servers in MRSK, and it’ll be auto-provisioned with Docker, ready to run.</p>
 
 <h3 id="minimal-production-dockerfile">Minimal production Dockerfile</h3>
 
@@ -183,10 +174,9 @@
 
 <p><a href="https://mailsnag.com/blog/optimized-ruby-dockerfile/">Mailsnag recently posted</a> a comprehensive Dockerfile for production.</p>
 
-      </div>
-
+        </div>
+      </article>
       <hr>
-
       <div class="commentbox"></div>
     </div>
   </div>

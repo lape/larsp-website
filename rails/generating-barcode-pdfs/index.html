@@ -78,14 +78,12 @@
               <i class="fa-solid fa-envelope"></i>
             </a>
           </li>
-
           <li class="ml-1 mr-1">
             <a href="#" title="Copy link to clipboard"
               onclick="let url = document.location.href;navigator.clipboard.writeText(url)">
               <i class="fa-solid fa-clipboard"></i>
             </a>
           </li>
-
           <li class="ml-1 mr-1">
             <a target="_blank" href="https://ruby.social/web/statuses/new"
               rel="nofollow" title="Share on Mastodon"
@@ -93,7 +91,6 @@
               <i class="fab fa-mastodon"></i>
             </a>
           </li>
-
           <li class="ml-1 mr-1">
             <a target="_blank" title="Share on Twitter"
               href="https://twitter.com/intent/tweet?text=Generating barcode PDFs with Rails&url=https://larsp.dev/rails/generating-barcode-pdfs/"
@@ -101,7 +98,6 @@
               <i class="fab fa-twitter"></i>
             </a>
           </li>
-
           <li class="ml-1 mr-1">
             <a target="_blank" title="Share on LinkedIn"
               href="https://www.linkedin.com/shareArticle?mini=true&url=https://larsp.dev/rails/generating-barcode-pdfs/"
@@ -109,23 +105,18 @@
               <i class="fab fa-linkedin-in"></i>
             </a>
           </li>
-
-
-
         </ul>
       </div>
-
     </div>
-
     <div class="col-md-9 flex-first flex-md-unordered">
-      <div class="mainheading">
-        <h1 class="posttitle">
-          Generating barcode PDFs with Rails
-        </h1>
-      </div>
-
-      <div class="article-post">
-        <p>For a project, I was researching methods to generate individual PDFs with imprinted EAN barcodes. Some of the how-tos and blog articles I found were quite old, and it was not directly obvious if the solution still works and can be recommended in 2023. The following represents my short note-taking of a decent way to do this. There may be other or better ways, but this one works for me.</p>
+      <article>
+        <div class="mainheading">
+          <h1 class="posttitle">
+            Generating barcode PDFs with Rails
+          </h1>
+        </div>
+        <div class="article-post">
+          <p>For a project, I was researching methods to generate individual PDFs with imprinted EAN barcodes. Some of the how-tos and blog articles I found were quite old, and it was not directly obvious if the solution still works and can be recommended in 2023. The following represents my short note-taking of a decent way to do this. There may be other or better ways, but this one works for me.</p>
 
 <p><a href="https://github.com/toretore/barby">Barby</a> is a barcode generator library for Ruby. It generates a barcode as an image or as a PDF. For creating the actual PDF with background image I am using the <a href="https://github.com/prawnpdf/prawn">Prawn</a> PDF generation library for Ruby. It produces PDFs from scratch and annotates existing PDFs with text, images, and barcodes.</p>
 
@@ -174,10 +165,9 @@
 
 <p style="text-align:center; filter:drop-shadow(5px 5px 5px #aaa)"><img src="/images/voucherpdf.png" alt="PDF with barcode" /></p>
 
-      </div>
-
+        </div>
+      </article>
       <hr>
-
       <div class="commentbox"></div>
     </div>
   </div>
