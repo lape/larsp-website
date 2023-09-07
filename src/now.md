@@ -10,10 +10,8 @@ Inspired by [Derek Sivers](https://sive.rs/nowff/) this is just a fun page for s
 
 ## Working on
 
-* Finishing and launching the user membership portal for gardasee.de.
-* Integrating and completing Schufa API services for 1159.
-* Hosting and overwatching the Coop Pronto campaigns we developed during the last months of 2022.
-* Updating some Drupal 8 sites.
+* Integrating and completing DATEV API services for 1159.
+* Preparing new Coop Pronto campaigns (see [Generating PDFs with Rails](/rails/generating-barcode-pdfs/)).
 
 ## Learning
 
