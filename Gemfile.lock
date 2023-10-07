@@ -1,18 +1,24 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activemodel (7.0.8)
-      activesupport (= 7.0.8)
-    activesupport (7.0.8)
+    activemodel (7.1.0)
+      activesupport (= 7.1.0)
+    activesupport (7.1.0)
+      base64
+      bigdecimal
       concurrent-ruby (~> 1.0, >= 1.0.2)
+      connection_pool (>= 2.2.5)
+      drb
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
+      mutex_m
       tzinfo (~> 2.0)
     addressable (2.8.5)
       public_suffix (>= 2.0.2, < 6.0)
     amazing_print (1.5.0)
     ast (2.4.2)
     base64 (0.1.1)
+    bigdecimal (3.1.4)
     bridgetown (1.3.1)
       bridgetown-builder (= 1.3.1)
       bridgetown-core (= 1.3.1)
@@ -54,6 +60,9 @@ GEM
       nokogiri
     colorator (1.1.0)
     concurrent-ruby (1.2.2)
+    connection_pool (2.4.1)
+    drb (2.1.1)
+      ruby2_keywords
     erubi (1.12.0)
     faraday (2.7.11)
       base64
@@ -62,7 +71,7 @@ GEM
     faraday-follow_redirects (0.3.0)
       faraday (>= 1, < 3)
     faraday-net_http (3.0.2)
-    ffi (1.16.2)
+    ffi (1.16.3)
     hash_with_dot_access (1.2.0)
       activesupport (>= 5.0.0, < 8.0)
     i18n (1.14.1)
@@ -79,6 +88,7 @@ GEM
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     minitest (5.20.0)
+    mutex_m (0.1.2)
     nio4r (2.5.9)
     nokogiri (1.15.4-arm64-darwin)
       racc (~> 1.4)
@@ -87,7 +97,7 @@ GEM
     nokogiri (1.15.4-x86_64-linux)
       racc (~> 1.4)
     parallel (1.23.0)
-    parser (3.2.2.3)
+    parser (3.2.2.4)
       ast (~> 2.4.1)
       racc
     public_suffix (5.0.3)
@@ -144,7 +154,7 @@ GEM
     tilt (2.3.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
-    unicode-display_width (2.4.2)
+    unicode-display_width (2.5.0)
     zeitwerk (2.6.12)
 
 PLATFORMS

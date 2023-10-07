@@ -19,9 +19,9 @@ Inspired by [Derek Sivers](https://sive.rs/nowff/) this is just a fun page for s
 
 ## Reading
 
-* Four Thousand Weeks by Oliver Burkeman.
+* Project Hail Mary by Andy Weir.
 * Rebuilding Rails by Noah Gibbs.
 
 ## Clearing up
 
-* In the process of terminating a cooperation I co-founded more than 10 years ago that we didn't use anymore the last years.
+* Logging our past travels with my [Ghost](/webtech/ghost-cms/) system [Reisepedia](https://reisepedia.de/).
