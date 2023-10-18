@@ -11,7 +11,7 @@ Inspired by [Derek Sivers](https://sive.rs/nowff/) this is just a fun page for s
 ## Working on
 
 * Integrating and completing DATEV API services for 1159.
-* Preparing new Coop Pronto campaigns (see [Generating PDFs with Rails](/rails/generating-barcode-pdfs/)).
+* Preparing new Coop Pronto campaigns (see [Barcode PDFs with Ruby on Rails](/rails/barcode-pdfs-with-ruby-on-rails/)).
 
 ## Learning
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Generating barcode PDFs with Rails"
+title: "Barcode PDFs with Ruby on Rails"
 description: "Using Barby and Prawn to imprint PDFs with individual barcodes."
 category: rails
 ---

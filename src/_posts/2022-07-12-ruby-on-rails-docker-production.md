@@ -63,7 +63,3 @@ Using nginx an additional certbot container is needed to generate and renew Lets
 Another great option is to use the great [fly.io](https://fly.io/) service, which runs your Docker image on [Firecracker](https://firecracker-microvm.github.io/) microVMs on their global infrastructure.
 
 [Mailsnag recently posted](https://mailsnag.com/blog/optimized-ruby-dockerfile/) a comprehensive Dockerfile for production.
-
-See also:
-
-- [Generating barcode PDFs with Rails](/rails/generating-barcode-pdfs/)
