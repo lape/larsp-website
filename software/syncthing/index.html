@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Begin Bridgetown SEO tag v6.0.0 -->
+<title>SyncThing | larsp.dev</title>
+<meta property="og:title" content="SyncThing" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Open source file synchronization software" />
+<meta property="og:description" content="Open source file synchronization software" />
+<link rel="canonical" href="https://larsp.dev/software/syncthing/" />
+<meta property="og:url" content="https://larsp.dev/software/syncthing/" />
+<meta property="og:site_name" content="larsp.dev" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-10-28T00:00:00+02:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="SyncThing" />
+<meta name="twitter:site" content="@lape" />
+<!-- End Bridgetown SEO tag -->
+
+
+<link type="application/atom+xml" rel="alternate" href="https://larsp.dev/feed.xml" title="larsp.dev" />
+<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+<link rel="stylesheet" href="/_bridgetown/static/index.CCDETTG4.css">
+<script src="/_bridgetown/static/index.Y6AD6WRO.js" defer></script>
+<script defer data-domain="larsp.dev" src="https://plausible.itpeters.com/js/script.js"></script>
+
+</head>
+<body class="layout-post post ">
+  <nav
+  class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+
+  <div class="container pr-0">
+
+    <a class="navbar-brand" href="/">
+      <h1 class="sitetitle">larsp.dev</h1>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+      data-target="#navbarMediumish" aria-controls="navbarSupportedContent"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarMediumish">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/about/">About</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/now/">Now</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="site-content">
+      <div class="container">
+        <div class="mainheading">
+          <p class="lead">
+            larsp’s personal site
+          </p>
+        </div>
+        <div class="main-content">
+          <div class="container">
+  <div class="row">
+    <div class="col-md-2 pl-0">
+      <div class="share sticky-top sticky-top-offset">
+        <ul>
+          <li class="ml-1 mr-1">
+            <a href="mailto:?subject=SyncThing&amp;body=https://larsp.dev/software/syncthing/" title="Share link by email" rel="_blank">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          </li>
+          <li class="ml-1 mr-1">
+            <a href="#" title="Copy link to clipboard"
+              onclick="let url = document.location.href;navigator.clipboard.writeText(url)">
+              <i class="fa-solid fa-clipboard"></i>
+            </a>
+          </li>
+          <li class="ml-1 mr-1">
+            <a target="_blank" href="https://ruby.social/web/statuses/new"
+              rel="nofollow" title="Share on Mastodon"
+              onclick="window.open(this.href, 'mastodon-share', 'width=550,height=435');return false;">
+              <i class="fab fa-mastodon"></i>
+            </a>
+          </li>
+          <li class="ml-1 mr-1">
+            <a target="_blank" title="Share on LinkedIn"
+              href="https://www.linkedin.com/shareArticle?mini=true&url=https://larsp.dev/software/syncthing/"
+              onclick="window.open(this.href, 'width=550,height=435');return false;">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-9 flex-first flex-md-unordered">
+      <article>
+        <div class="mainheading">
+          <h1 class="posttitle">
+            SyncThing
+          </h1>
+        </div>
+        <div class="article-post">
+          <p>As much I wanted it to work, iCloud file synchronization always gave me headaches. I work with two Macs - one Mini in the office, and a MacBook on the go. In addition, I’m using a large iPad Pro and an older, small iPad Pro for traveling. My work files, mostly Git repositories of projects I am working on and additional reference material, should be shared across all these devices. I tried to use iCloud for this, but it was always a pain to get it to work reliably. I also used Dropbox in the past, but moved away after they went the course of integration everything and whatnot in their software. Also, it was a resource hog.</p>
+
+<p>The problem with iCloud is that you don’t really know what’s going on. It’s a black box. You can’t see what’s happening, and you can’t really control it. When the service thinks your files might have been changed on another device, it will create a copy of the file with a suffix “ 2”. Sometimes this happens for hundreds of files in a folder, and I resorted to just deleting them with:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find <span class="nb">.</span> <span class="nt">-name</span> <span class="s2">"*</span><span class="se">\ </span><span class="s2">2"</span> <span class="nt">-delete</span>
+</code></pre></div></div>
+
+<p>Also, sometimes iCloud is not updating at all for some reason. Yesterday, I was fed up with this and installed <a href="https://github.com/syncthing/syncthing">SyncThing</a> on my Macs. It’s a free, open-source file synchronization software that works on all major platforms and works really smoothly. I used it in the past already, and never had a problem. For iOS, there is a third party solution (<a href="https://www.mobiussync.com/">MöbiusSync</a>) for syncing with you other devices (worked also without problems for me, in a minute).</p>
+
+<p>There is a <a href="https://github.com/syncthing/syncthing/blob/main/GOALS.md">goals document</a> describing SyncThing if you’re interested.</p>
+
+        </div>
+      </article>
+      <hr>
+      <div class="commentbox"></div>
+    </div>
+  </div>
+</div>
+
+        </div>
+      </div>
+      <footer class="footer">
+        
+      </footer>
+    </div>
+</body>
+</html>
