@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "SyncThing"
+title: "Syncthing"
 description: "Open source file synchronization software"
 category: software
 ---
@@ -13,6 +13,6 @@ The problem with iCloud is that you don't really know what's going on. It's a bl
 find . -name "*\ 2" -delete
 ```
 
-Also, sometimes iCloud is not updating at all for some reason. Yesterday, I was fed up with this and installed [SyncThing](https://github.com/syncthing/syncthing) on my Macs. It's a free, open-source file synchronization software that works on all major platforms and works really smoothly. I used it in the past already, and never had a problem. For iOS, there is a third party solution ([MöbiusSync](https://www.mobiussync.com/)) for syncing with you other devices (worked also without problems for me, in a minute).
+Also, sometimes iCloud is not updating at all for some reason. Yesterday, I was fed up with this and installed [Syncthing](https://github.com/syncthing/syncthing) on my Macs. It's a free, open-source file synchronization software that works on all major platforms and works really smoothly. I used it in the past already, and never had a problem. For iOS, there is a third party solution ([MöbiusSync](https://www.mobiussync.com/)) for syncing with you other devices (worked also without problems for me, in a minute).
 
-There is a [goals document](https://github.com/syncthing/syncthing/blob/main/GOALS.md) describing SyncThing if you're interested.
+There is a [goals document](https://github.com/syncthing/syncthing/blob/main/GOALS.md) describing Syncthing if you're interested.
