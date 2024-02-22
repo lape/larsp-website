@@ -1,7 +1,7 @@
-<% collections.posts.resources.each do |post| %>
-  <h5 class="mb-2">
-    <a href="<%= post.relative_url %>"><%= post.data.title %></a>
-  </h5>
-<% end %>
+<ul>
+  <% collections.posts.resources.each do |post| %>
+    <li><a href="<%= post.relative_url %>"><%= post.data.title %></a></li>
+  <% end %>
+</ul>
 
 <p class="mt-4">Subscribe to updates: <a href="/feed.xml">Atom/RSS feed</a></p>
