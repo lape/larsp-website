@@ -16,4 +16,4 @@ You can find some notes on what I'm currently up to on my [now page](/now/).
 
 ---
 
-<a rel="me" href="https://ruby.social/@lape"><i class="fa-brands fa-mastodon"></i></a>&nbsp;&nbsp;&nbsp;<a href="https://github.com/lape"><i class="fa-brands fa-github"></i></a>&nbsp;&nbsp;&nbsp;<a href="https://larsp.dev/feed.xml"><i class="fa-solid fa-rss"></i></a>
+<a rel="me" href="https://ruby.social/@lape"><i class="fa-brands fa-mastodon"></i></a>&nbsp;&nbsp;&nbsp;<a href="https://github.com/lape"><i class="fa-brands fa-github"></i></a>&nbsp;&nbsp;&nbsp;<a href="/feed.xml"><i class="fa-solid fa-rss"></i></a>

@@ -14,7 +14,7 @@
 # https://learnxinyminutes.com/docs/yaml/
 #
 
-url: "https://larsp.dev"
+url: "https://larsp.de"
 
 permalink: simple
 template_engine: erb

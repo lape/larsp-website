@@ -14,4 +14,4 @@ If you like, you can read more [about me](/about/), how [this website](/webtech/
 
 ----
 
-<a rel="me" href="https://ruby.social/@lape"><i class="fa-brands fa-mastodon"></i></a>&nbsp;&nbsp;&nbsp;[<i class="fa-brands fa-github"></i>](https://github.com/lape)&nbsp;&nbsp;&nbsp;[<i class="fa-solid fa-rss"></i>](https://larsp.dev/feed.xml)
+<a rel="me" href="https://ruby.social/@lape"><i class="fa-brands fa-mastodon"></i></a>&nbsp;&nbsp;&nbsp;[<i class="fa-brands fa-github"></i>](https://github.com/lape)&nbsp;&nbsp;&nbsp;[<i class="fa-solid fa-rss"></i>](/feed.xml)

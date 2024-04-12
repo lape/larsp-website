@@ -26,7 +26,7 @@ I noticed that in order to get the deployment working with a custom domain the _
   with:
     github_token: ${{ secrets.GITHUB_TOKEN }}
     publish_dir: ./output
-    cname: larsp.dev
+    cname: larsp.de
 ```
 
 To prevent the auto reload script from being included in the deployed code I also changed the build environment in the Rakefile to _production_:
