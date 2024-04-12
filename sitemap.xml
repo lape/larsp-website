@@ -4,40 +4,44 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
       <url>
-        <loc>https://larsp.dev/software/syncthing/</loc>
-        <lastmod>2024-02-22T15:31:49+01:00</lastmod>
+        <loc>https://larsp.de/software/syncthing/</loc>
+        <lastmod>2024-04-12T15:20:58+02:00</lastmod>
       </url>
       <url>
-        <loc>https://larsp.dev/webtech/ghost-cms/</loc>
-        <lastmod>2024-02-22T15:31:49+01:00</lastmod>
+        <loc>https://larsp.de/webtech/ghost-cms/</loc>
+        <lastmod>2024-04-12T15:20:58+02:00</lastmod>
       </url>
       <url>
-        <loc>https://larsp.dev/rails/barcode-pdfs-with-ruby-on-rails/</loc>
-        <lastmod>2024-02-22T15:31:49+01:00</lastmod>
+        <loc>https://larsp.de/rails/barcode-pdfs-with-ruby-on-rails/</loc>
+        <lastmod>2024-04-12T15:20:58+02:00</lastmod>
       </url>
       <url>
-        <loc>https://larsp.dev/webtech/archiving-cms-websites-to-static-files-with-httrack/</loc>
-        <lastmod>2024-02-22T15:31:49+01:00</lastmod>
+        <loc>https://larsp.de/webtech/archiving-cms-websites-to-static-files-with-httrack/</loc>
+        <lastmod>2024-04-12T15:20:58+02:00</lastmod>
       </url>
       <url>
-        <loc>https://larsp.dev/rails/ruby-on-rails-docker-production/</loc>
-        <lastmod>2024-02-22T15:31:49+01:00</lastmod>
+        <loc>https://larsp.de/rails/ruby-on-rails-docker-production/</loc>
+        <lastmod>2024-04-12T15:20:58+02:00</lastmod>
       </url>
       <url>
-        <loc>https://larsp.dev/webtech/bridgetown/</loc>
-        <lastmod>2024-02-22T15:31:49+01:00</lastmod>
+        <loc>https://larsp.de/webtech/bridgetown/</loc>
+        <lastmod>2024-04-12T15:20:58+02:00</lastmod>
       </url>
       <url>
-        <loc>https://larsp.dev/about/</loc>
-        <lastmod>2024-02-22T15:31:49+01:00</lastmod>
+        <loc>https://larsp.de/about/</loc>
+        <lastmod>2024-04-12T15:20:58+02:00</lastmod>
       </url>
       <url>
-        <loc>https://larsp.dev/</loc>
-        <lastmod>2024-02-22T15:31:49+01:00</lastmod>
+        <loc>https://larsp.de/contact/</loc>
+        <lastmod>2024-04-12T15:20:58+02:00</lastmod>
       </url>
       <url>
-        <loc>https://larsp.dev/now/</loc>
-        <lastmod>2024-02-22T15:31:49+01:00</lastmod>
+        <loc>https://larsp.de/</loc>
+        <lastmod>2024-04-12T15:20:58+02:00</lastmod>
+      </url>
+      <url>
+        <loc>https://larsp.de/now/</loc>
+        <lastmod>2024-04-12T15:20:58+02:00</lastmod>
       </url>
 
 
