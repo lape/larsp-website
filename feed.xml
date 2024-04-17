@@ -1,4 +1,127 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://bridgetownrb.com/" version="1.3.4">Bridgetown</generator><link href="https://larsp.de/feed.xml" rel="self" type="application/atom+xml" /><link href="https://larsp.de/" rel="alternate" type="text/html" /><updated>2024-04-12T15:21:49+02:00</updated><id>https://larsp.de/feed.xml</id><title type="html">larsp.de</title><subtitle>I&apos;m Lars, a software developer and IT consultant from Germany. This is my personal website, where I write about my journey as a full stack developer and take notes on things I learned along the way.</subtitle><entry><title type="html">Syncthing</title><link href="https://larsp.de/software/syncthing/" rel="alternate" type="text/html" title="Syncthing" /><published>2023-10-28T00:00:00+02:00</published><updated>2023-10-28T00:00:00+02:00</updated><id>repo://posts.collection/_posts/2023-10-28-syncthing.md</id><content type="html" xml:base="https://larsp.de/software/syncthing/">&lt;p&gt;As much I wanted it to work, iCloud file synchronization always gave me headaches. I work with two Macs - one Mini in the office, and a MacBook on the go. In addition, I’m using a large iPad Pro and an older, small iPad Pro for traveling. My work files, mostly Git repositories of projects I am working on and additional reference material, should be shared across all these devices. I tried to use iCloud for this, but it was always a pain to get it to work reliably. I also used Dropbox in the past, but moved away after they went the course of integration everything and whatnot in their software. Also, it was a resource hog.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://bridgetownrb.com/" version="1.3.4">Bridgetown</generator><link href="https://larsp.de/feed.xml" rel="self" type="application/atom+xml" /><link href="https://larsp.de/" rel="alternate" type="text/html" /><updated>2024-04-17T13:05:25+02:00</updated><id>https://larsp.de/feed.xml</id><title type="html">larsp.de</title><subtitle>I&apos;m Lars, a software developer and IT consultant from Germany. This is my personal website, where I write about my journey as a full stack developer and take notes on things I learned along the way.</subtitle><entry><title type="html">Favorite CLI Tools</title><link href="https://larsp.de/software/favorite-cli-tools/" rel="alternate" type="text/html" title="Favorite CLI Tools" /><published>2024-04-17T00:00:00+02:00</published><updated>2024-04-17T00:00:00+02:00</updated><id>repo://posts.collection/_posts/2024-04-17-favorite-cli-tools.md</id><content type="html" xml:base="https://larsp.de/software/favorite-cli-tools/">&lt;p&gt;In software development, getting to know the command line feels like you’ve suddenly got your hands on a wizard’s staff. These command-line tools saved me heaps of time and can pull off some pretty neat tricks.&lt;/p&gt;
+
+&lt;p&gt;It’s all about sharing the love and the magic, so let’s dive in and maybe you’ll find a new favorite or two!&lt;/p&gt;
+
+&lt;h2 id=&quot;bat---a-cat1-clone-with-wings&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;bat&lt;/code&gt; - a cat(1) clone with wings&lt;/h2&gt;
+
+&lt;p&gt;I love this. It’s a drop-in replacement for &lt;code class=&quot;highlighter-rouge&quot;&gt;cat&lt;/code&gt; that adds syntax highlighting, Git integration and lots more. It’s written in Rust and is blazing fast. &lt;a href=&quot;https://github.com/sharkdp/bat&quot;&gt;sharkdp/bat: A cat(1) clone with wings.&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;how-to-use-bat&quot;&gt;How to use &lt;code class=&quot;highlighter-rouge&quot;&gt;bat&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;To glance at a file using &lt;code class=&quot;highlighter-rouge&quot;&gt;bat&lt;/code&gt;, simply provide the path:&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bat /path/to/your/file
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The syntax highlighting and file-specific metadata make &lt;code class=&quot;highlighter-rouge&quot;&gt;bat&lt;/code&gt; a joy to use, ensuring you can inspect code and text files efficiently and with finesse.&lt;/p&gt;
+
+&lt;h2 id=&quot;homebrew---the-missing-package-manager-for-macos&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Homebrew&lt;/code&gt; - The missing package manager for macOS&lt;/h2&gt;
+
+&lt;p&gt;It’s simply a must-have for every Mac user. Whether it’s installing a new programming language, a database server, or the latest web framework, &lt;code class=&quot;highlighter-rouge&quot;&gt;Homebrew&lt;/code&gt; streamlines the process, taking out the need for locating and manually downloading software.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-brew-command&quot;&gt;The brew command&lt;/h3&gt;
+
+&lt;p&gt;Working with &lt;code class=&quot;highlighter-rouge&quot;&gt;Homebrew&lt;/code&gt; is straightforward:&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew update
+brew &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &amp;lt;package&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Homebrew&lt;/code&gt; also handles dependencies, ensuring that your software stack remains tidy and up-to-date with a simple command. Plus, with over 4,800 official packages and a thriving community of contributors, you’re sure to find everything you need.&lt;/p&gt;
+
+&lt;h2 id=&quot;httpie---http-client-for-the-command-line&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;httpie&lt;/code&gt; - HTTP client for the command line&lt;/h2&gt;
+
+&lt;p&gt;Making HTTP requests from the command line has never been more elegant than with &lt;code class=&quot;highlighter-rouge&quot;&gt;httpie&lt;/code&gt;. It simplifies interaction with APIs and web services, offering a user-friendly interface and an eye-pleasing HTTP request syntax colorization.&lt;/p&gt;
+
+&lt;h3 id=&quot;crafting-requests-with-httpie&quot;&gt;Crafting requests with &lt;code class=&quot;highlighter-rouge&quot;&gt;httpie&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;A basic GET request:&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;https httpie.io/hello
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;ahoy&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Hello, World! 👋 Thank you for trying out HTTPie 🥳&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;We hope this will become a friendship.&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;links&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;discord&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;https://httpie.io/discord&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;github&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;https://github.com/httpie&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;homepage&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;https://httpie.io&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;twitter&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;https://twitter.com/httpie&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;And the response is structured, formatted, and legible. &lt;code class=&quot;highlighter-rouge&quot;&gt;httpie&lt;/code&gt; also supports POST, PUT, DELETE requests, authentication, and other advanced features. It’s a great alternative to &lt;code class=&quot;highlighter-rouge&quot;&gt;curl&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;jq---command-line-json-processor&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;jq&lt;/code&gt; - Command-Line JSON Processor&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;jq&lt;/code&gt; is a sed-like tool that parses, manipulates, and displays JSON objects from the comfort of the command line. It excels at selectively filtering and transforming complex JSON data, which is a common task when working with APIs and backend services.&lt;/p&gt;
+
+&lt;h3 id=&quot;transforming-with-jq&quot;&gt;Transforming with &lt;code class=&quot;highlighter-rouge&quot;&gt;jq&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;Filtering results:&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;https httpie.io/hello | jq &lt;span class=&quot;s2&quot;&gt;&quot;{links}&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This will present the URL from the curl JSON response, making &lt;code class=&quot;highlighter-rouge&quot;&gt;jq&lt;/code&gt; a key player for any serious developer juggling JSON data.&lt;/p&gt;
+
+&lt;h2 id=&quot;lando---local-development-environment-and-devops-tool-built-on-docker-containers&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;lando&lt;/code&gt; - Local Development Environment and DevOps Tool Built on Docker Containers&lt;/h2&gt;
+
+&lt;p&gt;For local development with the ease of a one-command setup, &lt;code class=&quot;highlighter-rouge&quot;&gt;lando&lt;/code&gt; is a mighty ally. It configures and manages Docker-based development environments, providing an abstraction layer that spares developers the anguish and complexity of Docker configuration files.&lt;/p&gt;
+
+&lt;h3 id=&quot;a-lando-starter&quot;&gt;A &lt;code class=&quot;highlighter-rouge&quot;&gt;lando&lt;/code&gt; Starter&lt;/h3&gt;
+
+&lt;p&gt;Creating a WordPress site:&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;lando init &lt;span class=&quot;nt&quot;&gt;--recipe&lt;/span&gt; wordpress
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;And with that simple command, you’re on your way to local WordPress development with a containerized environment. &lt;code class=&quot;highlighter-rouge&quot;&gt;lando&lt;/code&gt; integrates with other tools such as &lt;code class=&quot;highlighter-rouge&quot;&gt;composer&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;npm&lt;/code&gt;, and &lt;code class=&quot;highlighter-rouge&quot;&gt;gulp&lt;/code&gt; to streamline development workflows. It’s an excellent tool for building, testing, and deploying applications locally.  One of the most powerful features is the ability to define multiple environments in a single configuration file (e.g. local, staging, production) that can be easily switched between.&lt;/p&gt;
+
+&lt;h2 id=&quot;ohmyzsh---a-delightful-framework-for-managing-your-zsh-configuration&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ohmyzsh&lt;/code&gt; - A Delightful Framework for Managing Your Zsh Configuration&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ohmyzsh&lt;/code&gt; transforms the already powerful &lt;code class=&quot;highlighter-rouge&quot;&gt;zsh&lt;/code&gt; into a feature-rich and stylish terminal environment. With themes, plugins, and an active community contributing to its growth, &lt;code class=&quot;highlighter-rouge&quot;&gt;ohmyzsh&lt;/code&gt; makes the terminal experience more personal and productive.&lt;/p&gt;
+
+&lt;h3 id=&quot;managing-zsh-like-a-charm&quot;&gt;Managing &lt;code class=&quot;highlighter-rouge&quot;&gt;zsh&lt;/code&gt; like a charm&lt;/h3&gt;
+
+&lt;p&gt;Switching themes is as simple as editing your &lt;code class=&quot;highlighter-rouge&quot;&gt;~/.zshrc&lt;/code&gt; file:&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;ZSH_THEME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Dracula&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Followed by a quick:&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.zshrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Your terminal then reflects the chosen theme, potentially improving your workflow by keeping you more engaged. &lt;code class=&quot;highlighter-rouge&quot;&gt;ohmyzsh&lt;/code&gt; also comes packed with a variety of plugins that add new features to &lt;code class=&quot;highlighter-rouge&quot;&gt;zsh&lt;/code&gt;, such as an auto-suggestion tool and syntax highlighting, making it even more powerful. These can be easily enabled or disabled through the &lt;code class=&quot;highlighter-rouge&quot;&gt;~/.zshrc&lt;/code&gt; file as well.&lt;/p&gt;
+
+&lt;h2 id=&quot;rbenv---ruby-version-manager&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rbenv&lt;/code&gt; - Ruby Version Manager&lt;/h2&gt;
+
+&lt;p&gt;For managing multiple Ruby environments, &lt;code class=&quot;highlighter-rouge&quot;&gt;rbenv&lt;/code&gt; is a vital cog. It allows for per-project Ruby versions, which is a blessing when working on legacy software that demands older Ruby interpreters alongside the current releases.&lt;/p&gt;
+
+&lt;h3 id=&quot;balancing-ruby-versions&quot;&gt;Balancing Ruby versions&lt;/h3&gt;
+
+&lt;p&gt;Selecting a Ruby version for your project:&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rbenv &lt;span class=&quot;nb&quot;&gt;local &lt;/span&gt;3.3.0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This indicates that the local project should use Ruby 3.3.0, leaving others unaffected by the change. When executing &lt;code class=&quot;highlighter-rouge&quot;&gt;bundle&lt;/code&gt; command, or any other code that requires a Ruby environment, &lt;code class=&quot;highlighter-rouge&quot;&gt;rbenv&lt;/code&gt; will use the specified version. This keeps developers from experiencing surprises when their global Ruby version is updated, and your project breaks.&lt;/p&gt;
+
+&lt;h2 id=&quot;zsh-autosuggestions---autosuggestions-for-zsh&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;zsh-autosuggestions&lt;/code&gt; - Autosuggestions for Zsh&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;zsh&lt;/code&gt; users will find &lt;code class=&quot;highlighter-rouge&quot;&gt;zsh-autosuggestions&lt;/code&gt; a game-changer. This tool offers context-aware auto-completion, predicting your command line needs with eerie accuracy, and saving precious keystrokes in the process.&lt;/p&gt;
+
+&lt;h3 id=&quot;follow-the-flow&quot;&gt;Follow the flow&lt;/h3&gt;
+
+&lt;p&gt;Simply start typing a command and, based on your history, &lt;code class=&quot;highlighter-rouge&quot;&gt;zsh-autosuggestions&lt;/code&gt; will begin offering predictions. You can cycle through suggestions with the right arrow key or accept one with the tab key.&lt;/p&gt;</content><author><name></name></author><category term="software" /></entry><entry><title type="html">Syncthing</title><link href="https://larsp.de/software/syncthing/" rel="alternate" type="text/html" title="Syncthing" /><published>2023-10-28T00:00:00+02:00</published><updated>2023-10-28T00:00:00+02:00</updated><id>repo://posts.collection/_posts/2023-10-28-syncthing.md</id><content type="html" xml:base="https://larsp.de/software/syncthing/">&lt;p&gt;As much I wanted it to work, iCloud file synchronization always gave me headaches. I work with two Macs - one Mini in the office, and a MacBook on the go. In addition, I’m using a large iPad Pro and an older, small iPad Pro for traveling. My work files, mostly Git repositories of projects I am working on and additional reference material, should be shared across all these devices. I tried to use iCloud for this, but it was always a pain to get it to work reliably. I also used Dropbox in the past, but moved away after they went the course of integration everything and whatnot in their software. Also, it was a resource hog.&lt;/p&gt;
 
 &lt;p&gt;The problem with iCloud is that you don’t really know what’s going on. It’s a black box. You can’t see what’s happening, and you can’t really control it. When the service thinks your files might have been changed on another device, it will create a copy of the file with a suffix “ 2”. Sometimes this happens for hundreds of files in a folder, and I resorted to just deleting them with:&lt;/p&gt;
 
