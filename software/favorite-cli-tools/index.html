@@ -110,9 +110,9 @@
           </h1>
         </div>
         <div class="article-post">
-          <p>In software development, getting to know the command line feels like you’ve suddenly got your hands on a wizard’s staff. These command-line tools saved me heaps of time and can pull off some pretty neat tricks.</p>
+          <p>In software development, the command line is the equivalent of a wizard’s staff. These CLI tools saved me heaps of time and I find them generally a joy to work with.</p>
 
-<p>It’s all about sharing the love and the magic, so let’s dive in and maybe you’ll find a new favorite or two!</p>
+<p>It’s all about sharing the love and the magic, and maybe you’ll find a new favorite or two. Let me <a href="/contact">know</a> if you have an invaluable CLI tool that you can’t live without.</p>
 
 <h2 id="bat---a-cat1-clone-with-wings"><code class="highlighter-rouge">bat</code> - a cat(1) clone with wings</h2>
 
@@ -170,7 +170,7 @@ brew <span class="nb">install</span> &lt;package&gt;
 
 <p>And the response is structured, formatted, and legible. <code class="highlighter-rouge">httpie</code> also supports POST, PUT, DELETE requests, authentication, and other advanced features. It’s a great alternative to <code class="highlighter-rouge">curl</code>.</p>
 
-<h2 id="jq---command-line-json-processor"><code class="highlighter-rouge">jq</code> - Command-Line JSON Processor</h2>
+<h2 id="jq---command-line-json-processor"><code class="highlighter-rouge">jq</code> - Command-line JSON processor</h2>
 
 <p><code class="highlighter-rouge">jq</code> is a sed-like tool that parses, manipulates, and displays JSON objects from the comfort of the command line. It excels at selectively filtering and transforming complex JSON data, which is a common task when working with APIs and backend services.</p>
 
@@ -181,38 +181,26 @@ brew <span class="nb">install</span> &lt;package&gt;
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https httpie.io/hello | jq <span class="s2">"{links}"</span>
 </code></pre></div></div>
 
-<p>This will present the URL from the curl JSON response, making <code class="highlighter-rouge">jq</code> a key player for any serious developer juggling JSON data.</p>
+<p>This will present just the links from the JSON response. <code class="highlighter-rouge">jq</code> is nice for quickly juggling JSON data.</p>
 
-<h2 id="lando---local-development-environment-and-devops-tool-built-on-docker-containers"><code class="highlighter-rouge">lando</code> - Local Development Environment and DevOps Tool Built on Docker Containers</h2>
+<h2 id="lando---local-development-environment-and-devops-tool-built-on-docker-containers"><code class="highlighter-rouge">lando</code> - Local development environment and DevOps tool built on Docker containers</h2>
 
-<p>For local development with the ease of a one-command setup, <code class="highlighter-rouge">lando</code> is a mighty ally. It configures and manages Docker-based development environments, providing an abstraction layer that spares developers the anguish and complexity of Docker configuration files.</p>
+<p>For local development, <code class="highlighter-rouge">lando</code> is a mighty ally. It configures and manages Docker-based development environments, providing an abstraction layer that spares developers the mundanity of configuring development Docker environments and installing necessary tools and software versions.</p>
 
-<h3 id="a-lando-starter">A <code class="highlighter-rouge">lando</code> Starter</h3>
+<h3 id="a-lando-starter">A <code class="highlighter-rouge">lando</code> starter</h3>
 
-<p>Creating a WordPress site:</p>
+<p>Creating a Wordpress site:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lando init <span class="nt">--recipe</span> wordpress
 </code></pre></div></div>
 
-<p>And with that simple command, you’re on your way to local WordPress development with a containerized environment. <code class="highlighter-rouge">lando</code> integrates with other tools such as <code class="highlighter-rouge">composer</code>, <code class="highlighter-rouge">npm</code>, and <code class="highlighter-rouge">gulp</code> to streamline development workflows. It’s an excellent tool for building, testing, and deploying applications locally.  One of the most powerful features is the ability to define multiple environments in a single configuration file (e.g. local, staging, production) that can be easily switched between.</p>
+<p>And with that simple command, you’re on your way to local Wordpress development with a containerized environment. <code class="highlighter-rouge">lando</code> integrates with other tools such as <code class="highlighter-rouge">composer</code>, <code class="highlighter-rouge">npm</code>, and <code class="highlighter-rouge">gulp</code> to streamline development workflows. It’s an excellent tool for building, testing, and deploying applications locally.  One of the most powerful features is the ability to define multiple environments in a single configuration file (e.g. local, staging, production) that can be easily switched between.</p>
 
-<h2 id="ohmyzsh---a-delightful-framework-for-managing-your-zsh-configuration"><code class="highlighter-rouge">ohmyzsh</code> - A Delightful Framework for Managing Your Zsh Configuration</h2>
+<h2 id="ohmyzsh---delightful-framework-for-managing-your-zsh-configuration"><code class="highlighter-rouge">ohmyzsh</code> - Delightful framework for managing your <code class="highlighter-rouge">zsh</code> configuration</h2>
 
-<p><code class="highlighter-rouge">ohmyzsh</code> transforms the already powerful <code class="highlighter-rouge">zsh</code> into a feature-rich and stylish terminal environment. With themes, plugins, and an active community contributing to its growth, <code class="highlighter-rouge">ohmyzsh</code> makes the terminal experience more personal and productive.</p>
+<p><code class="highlighter-rouge">ohmyzsh</code> transforms the already powerful <code class="highlighter-rouge">zsh</code> into a feature-rich and stylish terminal environment. With themes, plugins, and an active community contributing enhancements, <code class="highlighter-rouge">ohmyzsh</code> makes the terminal experience more personal and productive.</p>
 
-<h3 id="managing-zsh-like-a-charm">Managing <code class="highlighter-rouge">zsh</code> like a charm</h3>
-
-<p>Switching themes is as simple as editing your <code class="highlighter-rouge">~/.zshrc</code> file:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">ZSH_THEME</span><span class="o">=</span><span class="s2">"Dracula"</span>
-</code></pre></div></div>
-
-<p>Followed by a quick:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">source</span> ~/.zshrc
-</code></pre></div></div>
-
-<p>Your terminal then reflects the chosen theme, potentially improving your workflow by keeping you more engaged. <code class="highlighter-rouge">ohmyzsh</code> also comes packed with a variety of plugins that add new features to <code class="highlighter-rouge">zsh</code>, such as an auto-suggestion tool and syntax highlighting, making it even more powerful. These can be easily enabled or disabled through the <code class="highlighter-rouge">~/.zshrc</code> file as well.</p>
+<p><code class="highlighter-rouge">ohmyzsh</code> also comes packed with a variety of plugins that add new features to <code class="highlighter-rouge">zsh</code>, such as an auto-suggestion tool and syntax highlighting, making it even more powerful. These can be easily enabled or disabled through the <code class="highlighter-rouge">~/.zshrc</code> file as well.</p>
 
 <h2 id="rbenv---ruby-version-manager"><code class="highlighter-rouge">rbenv</code> - Ruby Version Manager</h2>
 
@@ -227,11 +215,9 @@ brew <span class="nb">install</span> &lt;package&gt;
 
 <p>This indicates that the local project should use Ruby 3.3.0, leaving others unaffected by the change. When executing <code class="highlighter-rouge">bundle</code> command, or any other code that requires a Ruby environment, <code class="highlighter-rouge">rbenv</code> will use the specified version. This keeps developers from experiencing surprises when their global Ruby version is updated, and your project breaks.</p>
 
-<h2 id="zsh-autosuggestions---autosuggestions-for-zsh"><code class="highlighter-rouge">zsh-autosuggestions</code> - Autosuggestions for Zsh</h2>
+<h2 id="zsh-autosuggestions---completions-for-zsh"><code class="highlighter-rouge">zsh-autosuggestions</code> - Completions for <code class="highlighter-rouge">zsh</code></h2>
 
 <p><code class="highlighter-rouge">zsh</code> users will find <code class="highlighter-rouge">zsh-autosuggestions</code> a game-changer. This tool offers context-aware auto-completion, predicting your command line needs with eerie accuracy, and saving precious keystrokes in the process.</p>
-
-<h3 id="follow-the-flow">Follow the flow</h3>
 
 <p>Simply start typing a command and, based on your history, <code class="highlighter-rouge">zsh-autosuggestions</code> will begin offering predictions. You can cycle through suggestions with the right arrow key or accept one with the tab key.</p>
 
