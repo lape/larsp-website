@@ -5,9 +5,9 @@ description: "Command-Line Wizardry"
 category: software
 ---
 
-In software development, getting to know the command line feels like you've suddenly got your hands on a wizard's staff. These command-line tools saved me heaps of time and can pull off some pretty neat tricks.
+In software development, the command line is the equivalent of a wizard's staff. These CLI tools saved me heaps of time and I find them generally a joy to work with.
 
-It's all about sharing the love and the magic, so let's dive in and maybe you'll find a new favorite or two!
+It's all about sharing the love and the magic, and maybe you'll find a new favorite or two. Let me [know](/contact) if you have an invaluable CLI tool that you can't live without.
 
 ##  `bat` - a cat(1) clone with wings
 
@@ -69,7 +69,7 @@ Output:
 
 And the response is structured, formatted, and legible. `httpie` also supports POST, PUT, DELETE requests, authentication, and other advanced features. It's a great alternative to `curl`.
 
-## `jq` - Command-Line JSON Processor
+## `jq` - Command-line JSON processor
 
 `jq` is a sed-like tool that parses, manipulates, and displays JSON objects from the comfort of the command line. It excels at selectively filtering and transforming complex JSON data, which is a common task when working with APIs and backend services.
 
@@ -81,41 +81,27 @@ Filtering results:
 https httpie.io/hello | jq "{links}"
 ```
 
-This will present the URL from the curl JSON response, making `jq` a key player for any serious developer juggling JSON data.
+This will present just the links from the JSON response. `jq` is nice for quickly juggling JSON data.
 
-## `lando` - Local Development Environment and DevOps Tool Built on Docker Containers
+## `lando` - Local development environment and DevOps tool built on Docker containers
 
-For local development with the ease of a one-command setup, `lando` is a mighty ally. It configures and manages Docker-based development environments, providing an abstraction layer that spares developers the anguish and complexity of Docker configuration files.
+For local development, `lando` is a mighty ally. It configures and manages Docker-based development environments, providing an abstraction layer that spares developers the mundanity of configuring development Docker environments and installing necessary tools and software versions.
 
-### A `lando` Starter
+### A `lando` starter
 
-Creating a WordPress site:
+Creating a Wordpress site:
 
 ```sh
 lando init --recipe wordpress
 ```
 
-And with that simple command, you're on your way to local WordPress development with a containerized environment. `lando` integrates with other tools such as `composer`, `npm`, and `gulp` to streamline development workflows. It's an excellent tool for building, testing, and deploying applications locally.  One of the most powerful features is the ability to define multiple environments in a single configuration file (e.g. local, staging, production) that can be easily switched between.
+And with that simple command, you're on your way to local Wordpress development with a containerized environment. `lando` integrates with other tools such as `composer`, `npm`, and `gulp` to streamline development workflows. It's an excellent tool for building, testing, and deploying applications locally.  One of the most powerful features is the ability to define multiple environments in a single configuration file (e.g. local, staging, production) that can be easily switched between.
 
-## `ohmyzsh` - A Delightful Framework for Managing Your Zsh Configuration
+## `ohmyzsh` - Delightful framework for managing your `zsh` configuration
 
-`ohmyzsh` transforms the already powerful `zsh` into a feature-rich and stylish terminal environment. With themes, plugins, and an active community contributing to its growth, `ohmyzsh` makes the terminal experience more personal and productive.
+`ohmyzsh` transforms the already powerful `zsh` into a feature-rich and stylish terminal environment. With themes, plugins, and an active community contributing enhancements, `ohmyzsh` makes the terminal experience more personal and productive.
 
-### Managing `zsh` like a charm
-
-Switching themes is as simple as editing your `~/.zshrc` file:
-
-```sh
-ZSH_THEME="Dracula"
-```
-
-Followed by a quick:
-
-```sh
-source ~/.zshrc
-```
-
-Your terminal then reflects the chosen theme, potentially improving your workflow by keeping you more engaged. `ohmyzsh` also comes packed with a variety of plugins that add new features to `zsh`, such as an auto-suggestion tool and syntax highlighting, making it even more powerful. These can be easily enabled or disabled through the `~/.zshrc` file as well.
+`ohmyzsh` also comes packed with a variety of plugins that add new features to `zsh`, such as an auto-suggestion tool and syntax highlighting, making it even more powerful. These can be easily enabled or disabled through the `~/.zshrc` file as well.
 
 ## `rbenv` - Ruby Version Manager
 
@@ -131,10 +117,8 @@ rbenv local 3.3.0
 
 This indicates that the local project should use Ruby 3.3.0, leaving others unaffected by the change. When executing `bundle` command, or any other code that requires a Ruby environment, `rbenv` will use the specified version. This keeps developers from experiencing surprises when their global Ruby version is updated, and your project breaks.
 
-## `zsh-autosuggestions` - Autosuggestions for Zsh
+## `zsh-autosuggestions` - Completions for `zsh`
 
 `zsh` users will find `zsh-autosuggestions` a game-changer. This tool offers context-aware auto-completion, predicting your command line needs with eerie accuracy, and saving precious keystrokes in the process.
-
-### Follow the flow
 
 Simply start typing a command and, based on your history, `zsh-autosuggestions` will begin offering predictions. You can cycle through suggestions with the right arrow key or accept one with the tab key.

@@ -10,18 +10,21 @@ Inspired by [Derek Sivers](https://sive.rs/nowff/) this is just a fun page for s
 
 ## Working on
 
-* Integrating and completing DATEV API services for 1159.
-* Preparing new Coop Pronto campaigns (see [Barcode PDFs with Ruby on Rails](/rails/barcode-pdfs-with-ruby-on-rails/)).
+* Integrating SevDesk API integration for 1159.
+* Migrating FreeSWITCH systems to a new data center.
+* New customer self-service portal.
 
 ## Learning
 
-* Working on my Ruby on Rails skills.
+* [Jumpstart Pro](https://jumpstart.pro/) SaaS framework.
 
 ## Reading
 
-* Project Hail Mary by Andy Weir.
-* Rebuilding Rails by Noah Gibbs.
+* Die with Zero by Bill Perkins.
+* The Comfort Crisis by Michael Easter.
 
 ## Clearing up
 
-* Logging our past travels with my [Ghost](/webtech/ghost-cms/) system [Reisepedia](https://reisepedia.de/).
+* Clearing out unused domains I always wanted to do something with.
+* Integrated draussen.blog unter [draussen.reisepedia.de](https://draussen.reisepedia.de/).
+* Logging past travels with my [Ghost](/webtech/ghost-cms/) system [Reisepedia](https://reisepedia.de/).
