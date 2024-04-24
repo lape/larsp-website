@@ -9,7 +9,7 @@ In software development, the command line is the equivalent of a wizard's staff.
 
 It's all about sharing the love and the magic, and maybe you'll find a new favorite or two. Let me [know](/contact) if you have an invaluable CLI tool that you can't live without.
 
-##  `bat` - a cat(1) clone with wings
+## `bat` - a cat(1) clone with wings
 
 I love this. It's a drop-in replacement for `cat` that adds syntax highlighting, Git integration and lots more. It's written in Rust and is blazing fast. [sharkdp/bat: A cat(1) clone with wings.](https://github.com/sharkdp/bat)
 
