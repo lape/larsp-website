@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://bridgetownrb.com/" version="1.3.4">Bridgetown</generator><link href="https://larsp.de/feed.xml" rel="self" type="application/atom+xml" /><link href="https://larsp.de/" rel="alternate" type="text/html" /><updated>2024-04-18T09:40:52+02:00</updated><id>https://larsp.de/feed.xml</id><title type="html">larsp.de</title><subtitle>I&apos;m Lars, a software developer and IT consultant from Germany. This is my personal website, where I write about my journey as a full stack developer and take notes on things I learned along the way.</subtitle><entry><title type="html">Favorite CLI Tools</title><link href="https://larsp.de/software/favorite-cli-tools/" rel="alternate" type="text/html" title="Favorite CLI Tools" /><published>2024-04-17T00:00:00+02:00</published><updated>2024-04-17T00:00:00+02:00</updated><id>repo://posts.collection/_posts/2024-04-17-favorite-cli-tools.md</id><content type="html" xml:base="https://larsp.de/software/favorite-cli-tools/">&lt;p&gt;In software development, the command line is the equivalent of a wizard’s staff. These CLI tools saved me heaps of time and I find them generally a joy to work with.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://bridgetownrb.com/" version="1.3.4">Bridgetown</generator><link href="https://larsp.de/feed.xml" rel="self" type="application/atom+xml" /><link href="https://larsp.de/" rel="alternate" type="text/html" /><updated>2024-04-24T11:28:04+02:00</updated><id>https://larsp.de/feed.xml</id><title type="html">larsp.de</title><subtitle>I&apos;m Lars, a software developer and IT consultant from Germany. This is my personal website, where I write about my journey as a full stack developer and take notes on things I learned along the way.</subtitle><entry><title type="html">Favorite CLI Tools</title><link href="https://larsp.de/software/favorite-cli-tools/" rel="alternate" type="text/html" title="Favorite CLI Tools" /><published>2024-04-17T00:00:00+02:00</published><updated>2024-04-17T00:00:00+02:00</updated><id>repo://posts.collection/_posts/2024-04-17-favorite-cli-tools.md</id><content type="html" xml:base="https://larsp.de/software/favorite-cli-tools/">&lt;p&gt;In software development, the command line is the equivalent of a wizard’s staff. These CLI tools saved me heaps of time and I find them generally a joy to work with.&lt;/p&gt;
 
 &lt;p&gt;It’s all about sharing the love and the magic, and maybe you’ll find a new favorite or two. Let me &lt;a href=&quot;/contact&quot;&gt;know&lt;/a&gt; if you have an invaluable CLI tool that you can’t live without.&lt;/p&gt;
 
@@ -218,63 +218,109 @@ brew &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &amp;lt;package&amp;g
   &lt;li&gt;&lt;a href=&quot;http://www.httrack.com/html/fcguide.html&quot;&gt;Httrack users guide&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.drupal.org/node/27882&quot;&gt;Archiving Drupal sites&lt;/a&gt; on drupal.org.&lt;/li&gt;
   &lt;li&gt;Karen from Lullabot &lt;a href=&quot;https://www.lullabot.com/articles/sending-drupal-site-retirement-using-httrack&quot;&gt;about archiving Drupal sites&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="webtech" /></entry><entry><title type="html">Ruby on Rails with Docker in production</title><link href="https://larsp.de/rails/ruby-on-rails-docker-production/" rel="alternate" type="text/html" title="Ruby on Rails with Docker in production" /><published>2022-07-12T00:00:00+02:00</published><updated>2022-07-12T00:00:00+02:00</updated><id>repo://posts.collection/_posts/2022-07-12-ruby-on-rails-docker-production.md</id><content type="html" xml:base="https://larsp.de/rails/ruby-on-rails-docker-production/">&lt;p&gt;Docker is a fantastic tool that allows developers to create and deploy applications in a consistent and predictable way. It offers the ability to create clean separations between different applications, ensuring that developers can work on multiple projects without worrying about conflicting dependencies or software versions. Additionally, Docker provides a way to define specific versions of software and runtime environments, which ensures that the application runs consistently across different environments. This is particularly useful for testing and deployment, as it allows developers to replicate the environment across different platforms, making it easy to deploy the application to production without any surprises.&lt;/p&gt;
+&lt;/ul&gt;</content><author><name></name></author><category term="webtech" /></entry><entry><title type="html">Ruby on Rails with Docker</title><link href="https://larsp.de/rails/ruby-on-rails-docker-production/" rel="alternate" type="text/html" title="Ruby on Rails with Docker" /><published>2022-07-12T00:00:00+02:00</published><updated>2022-07-12T00:00:00+02:00</updated><id>repo://posts.collection/_posts/2022-07-12-ruby-on-rails-docker-production.md</id><content type="html" xml:base="https://larsp.de/rails/ruby-on-rails-docker-production/">&lt;p&gt;Docker is a fantastic tool that allows developers to create and deploy applications in a consistent and predictable way. It offers the ability to create clean separations between different applications, ensuring that developers can work on multiple projects without worrying about conflicting dependencies or software versions. Additionally, Docker provides a way to define specific versions of software and runtime environments, which ensures that the application runs consistently across different environments. This is particularly useful for testing and deployment, as it allows developers to replicate the environment across different platforms, making it easy to deploy the application to production without any surprises.&lt;/p&gt;
 
 &lt;h3 id=&quot;dokku&quot;&gt;Dokku&lt;/h3&gt;
 
 &lt;p&gt;Today we are lucky to have several nice options for containerized Rails deployment. Personally, I like the &lt;a href=&quot;https://dokku.com/&quot;&gt;Dokku&lt;/a&gt; hosting system. Think of Dokku as a mini-Heroku; it’s lightweight but certainly packs a punch in terms of functionality. Multi-host deployments are not (easily) possible with Dokku.&lt;/p&gt;
 
-&lt;h3 id=&quot;mrsk&quot;&gt;MRSK&lt;/h3&gt;
+&lt;h3 id=&quot;kamal&quot;&gt;Kamal&lt;/h3&gt;
 
-&lt;p&gt;Developed by the Basecamp team and used for their Rails deployments (i.e. the HEY email service), this is a great option for multi-host setups. Imagine &lt;a href=&quot;https://github.com/mrsked/mrsk/&quot;&gt;MRSK&lt;/a&gt; as Capistrano for Containers, it will provision your servers and deploy the software to it, including the right version of Ruby and other dependencies. That all lives in the Docker image now. You can boot a brand new Ubuntu (or whatever) server, add it to the list of servers in MRSK, and it’ll be auto-provisioned with Docker, ready to run.&lt;/p&gt;
+&lt;p&gt;Developed by the Basecamp team and used for their Rails deployments (i.e. the HEY email service), this is a great option for multi-host setups. Imagine &lt;a href=&quot;https://kamal-deploy.org/&quot;&gt;Kamal&lt;/a&gt; as Capistrano for Containers, it will provision your servers and deploy the software to it, including the right version of Ruby and other dependencies. That all lives in the Docker image now. You can boot a brand new Ubuntu (or whatever) server, add it to the list of servers in MRSK, and it’ll be auto-provisioned with Docker, ready to run.&lt;/p&gt;
 
-&lt;h3 id=&quot;minimal-production-dockerfile&quot;&gt;Minimal production Dockerfile&lt;/h3&gt;
-
-&lt;p&gt;The following is best thought of as a &lt;em&gt;minimal&lt;/em&gt; Ruby on Rails Docker production setup. It can be further build on e.g. by using an incremental build process (with several layers).&lt;/p&gt;
-
-&lt;p&gt;Maybe not all three database clients MySQL/PostgreSQL/SQLite that are included in the Dockerfile are necessary for your application, so omit what isn’t needed.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Kamal offers zero-downtime deploys, rolling restarts, asset bridging, remote builds, accessory service management, and everything else you need to deploy and manage your web app in production with Docker. Originally built for Rails apps, Kamal will work with any type of web app that can be containerized.&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/venti-views-1cqIcrWFQBI-unsplash.jpg&quot; alt=&quot;Container ship&quot; /&gt;
 &lt;em&gt;Photo by &lt;a href=&quot;https://unsplash.com/@ventiviews?utm_source=unsplash&amp;amp;utm_medium=referral&amp;amp;utm_content=creditCopyText&quot;&gt;Venti Views&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;dockerfile&quot;&gt;Dockerfile&lt;/h3&gt;
 
-&lt;div class=&quot;language-docker highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Ruby on Rails application in production mode&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; ruby:3.2.2&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-sL&lt;/span&gt; https://deb.nodesource.com/setup_14.x | bash -
+&lt;p&gt;Since 7.1 Rails comes with a default Dockerfile, which is a good starting point for your own:&lt;/p&gt;
+
+&lt;div class=&quot;language-docker highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# syntax = docker/dockerfile:1&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Make sure RUBY_VERSION matches the Ruby version in .ruby-version and Gemfile&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;ARG&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; RUBY_VERSION=3.3.0&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;registry.docker.com/library/ruby:$RUBY_VERSION-slim&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;as&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;base&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Rails app lives here&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;WORKDIR&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; /rails&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Set production environment&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; RAILS_ENV=&quot;production&quot; \&lt;/span&gt;
+    BUNDLE_DEPLOYMENT=&quot;1&quot; \
+    BUNDLE_PATH=&quot;/usr/local/bundle&quot; \
+    BUNDLE_WITHOUT=&quot;development&quot;
+
+# Throw-away build stage to reduce size of final image
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;base&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;as&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;build&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Install packages needed to build gems and node modules&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;apt-get update &lt;span class=&quot;nt&quot;&gt;-qq&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\
-&lt;/span&gt;  apt-get &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-qq&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--no-install-recommends&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\
-&lt;/span&gt;  nodejs &lt;span class=&quot;se&quot;&gt;\
-&lt;/span&gt;  mariadb-client &lt;span class=&quot;se&quot;&gt;\
-&lt;/span&gt;  postgresql-client &lt;span class=&quot;se&quot;&gt;\
-&lt;/span&gt;  sqlite3 &lt;span class=&quot;se&quot;&gt;\
-&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; apt-get clean &lt;span class=&quot;se&quot;&gt;\
-&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;rm&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-rf&lt;/span&gt; /var/lib/apt/lists/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; yarn
-&lt;span class=&quot;k&quot;&gt;WORKDIR&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; /app&lt;/span&gt;
+&lt;/span&gt;    apt-get &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--no-install-recommends&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-y&lt;/span&gt; build-essential curl git libvips node-gyp pkg-config python-is-python3
+
+&lt;span class=&quot;c&quot;&gt;# Install JavaScript dependencies&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;ARG&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; NODE_VERSION=20.11.0&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;ARG&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; YARN_VERSION=1.22.21&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; PATH=/usr/local/node/bin:$PATH&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-sL&lt;/span&gt; https://github.com/nodenv/node-build/archive/master.tar.gz | &lt;span class=&quot;nb&quot;&gt;tar &lt;/span&gt;xz &lt;span class=&quot;nt&quot;&gt;-C&lt;/span&gt; /tmp/ &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\
+&lt;/span&gt;    /tmp/node-build-master/bin/node-build &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;NODE_VERSION&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; /usr/local/node &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\
+&lt;/span&gt;    npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; yarn@&lt;span class=&quot;nv&quot;&gt;$YARN_VERSION&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\
+&lt;/span&gt;    &lt;span class=&quot;nb&quot;&gt;rm&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-rf&lt;/span&gt; /tmp/node-build-master
+
+&lt;span class=&quot;c&quot;&gt;# Install application gems&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;COPY&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; Gemfile Gemfile.lock ./&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;gem &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;bundler
-&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;bundle config &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;force_ruby_platform &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;bundle config &lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--local&lt;/span&gt; without &lt;span class=&quot;s1&quot;&gt;&apos;development test&apos;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;bundle &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--jobs&lt;/span&gt; 20 &lt;span class=&quot;nt&quot;&gt;--retry&lt;/span&gt; 5
-&lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; RAILS_ENV production&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; RACK_ENV production&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;COPY&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; . ./&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;SECRET_KEY_BASE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1 &lt;span class=&quot;se&quot;&gt;\
-&lt;/span&gt;  bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;rails assets:precompile
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;bundle &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\
+&lt;/span&gt;    &lt;span class=&quot;nb&quot;&gt;rm&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-rf&lt;/span&gt; ~/.bundle/ &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;BUNDLE_PATH&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;/ruby/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;/cache &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;BUNDLE_PATH&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;/ruby/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;/bundler/gems/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;/.git &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\
+&lt;/span&gt;    bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;bootsnap precompile &lt;span class=&quot;nt&quot;&gt;--gemfile&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Install node modules&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;COPY&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; package.json yarn.lock ./&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;yarn &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--frozen-lockfile&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Copy application code&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;COPY&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; . .&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Precompile bootsnap code for faster boot times&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;bootsnap precompile app/ lib/
+
+&lt;span class=&quot;c&quot;&gt;# Precompiling assets for production without requiring secret RAILS_MASTER_KEY&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;SECRET_KEY_BASE_DUMMY&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1 ./bin/rails assets:precompile
+
+&lt;span class=&quot;c&quot;&gt;# Final stage for app image&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; base&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Install packages needed for deployment&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;apt-get update &lt;span class=&quot;nt&quot;&gt;-qq&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\
+&lt;/span&gt;    apt-get &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--no-install-recommends&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-y&lt;/span&gt; curl libsqlite3-0 libvips &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\
+&lt;/span&gt;    &lt;span class=&quot;nb&quot;&gt;rm&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-rf&lt;/span&gt; /var/lib/apt/lists /var/cache/apt/archives
+
+&lt;span class=&quot;c&quot;&gt;# Copy built artifacts: gems, application&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;COPY&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; --from=build /usr/local/bundle /usr/local/bundle&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;COPY&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; --from=build /rails /rails&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Run and own only the runtime files as a non-root user for security&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;useradd rails &lt;span class=&quot;nt&quot;&gt;--create-home&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--shell&lt;/span&gt; /bin/bash &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\
+&lt;/span&gt;    &lt;span class=&quot;nb&quot;&gt;chown&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-R&lt;/span&gt; rails:rails db log storage tmp
+&lt;span class=&quot;k&quot;&gt;USER&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; rails:rails&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Entrypoint prepares the database.&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;ENTRYPOINT&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; [&quot;/rails/bin/docker-entrypoint&quot;]&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Start the server by default, this can be overwritten at runtime&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;EXPOSE&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; 3000&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;CMD&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; bundle exec rails s -e production -p 3000&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;CMD&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; [&quot;./bin/rails&quot;, &quot;server&quot;]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Extend with a GitHub action to build on commit (similar to &lt;a href=&quot;/webtech/bridgetown/&quot;&gt;autobuilding this Bridgetown site&lt;/a&gt;) and push the image to a repository like Docker Hub or Amazon ECR.&lt;/p&gt;
 
-&lt;p&gt;Combine with nginx or &lt;a href=&quot;https://github.com/traefik/traefik/&quot;&gt;Traefik&lt;/a&gt; as load balancer/reverse proxy.&lt;/p&gt;
+&lt;p&gt;Combine with nginx or &lt;a href=&quot;https://github.com/traefik/traefik/&quot;&gt;Traefik&lt;/a&gt; as load balancer/reverse proxy (or use Kamal or Dokku).&lt;/p&gt;
 
 &lt;p&gt;Using nginx an additional certbot container is needed to generate and renew Letsencrypt TLS certificates. Traefik will handle this by itself.&lt;/p&gt;
 
-&lt;p&gt;Another great option is to use the great &lt;a href=&quot;https://fly.io/&quot;&gt;fly.io&lt;/a&gt; service, which runs your Docker image on &lt;a href=&quot;https://firecracker-microvm.github.io/&quot;&gt;Firecracker&lt;/a&gt; microVMs on their global infrastructure.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://mailsnag.com/blog/optimized-ruby-dockerfile/&quot;&gt;Mailsnag recently posted&lt;/a&gt; a comprehensive Dockerfile for production.&lt;/p&gt;</content><author><name></name></author><category term="rails" /></entry><entry><title type="html">Bridgetown with GitHub Pages and custom domain</title><link href="https://larsp.de/webtech/bridgetown/" rel="alternate" type="text/html" title="Bridgetown with GitHub Pages and custom domain" /><published>2022-04-30T00:00:00+02:00</published><updated>2022-04-30T00:00:00+02:00</updated><id>repo://posts.collection/_posts/2022-04-30-bridgetown.md</id><content type="html" xml:base="https://larsp.de/webtech/bridgetown/">&lt;p&gt;For this personal website, I wanted to keep it lean and minimal and the blogging software or CMS should stay out of the way. It shouldn’t be a hassle to maintain or update. So in 2022 I started this site with the &lt;a href=&quot;https://www.bridgetownrb.com/&quot;&gt;Bridgetown&lt;/a&gt; static site generator. And so far, it’s going well.&lt;/p&gt;
+&lt;p&gt;Another great option is to use the great &lt;a href=&quot;https://fly.io/&quot;&gt;fly.io&lt;/a&gt; service, which runs your Docker image on &lt;a href=&quot;https://firecracker-microvm.github.io/&quot;&gt;Firecracker&lt;/a&gt; microVMs on their global infrastructure.&lt;/p&gt;</content><author><name></name></author><category term="rails" /></entry><entry><title type="html">Bridgetown with GitHub Pages and custom domain</title><link href="https://larsp.de/webtech/bridgetown/" rel="alternate" type="text/html" title="Bridgetown with GitHub Pages and custom domain" /><published>2022-04-30T00:00:00+02:00</published><updated>2022-04-30T00:00:00+02:00</updated><id>repo://posts.collection/_posts/2022-04-30-bridgetown.md</id><content type="html" xml:base="https://larsp.de/webtech/bridgetown/">&lt;p&gt;For this personal website, I wanted to keep it lean and minimal and the blogging software or CMS should stay out of the way. It shouldn’t be a hassle to maintain or update. So in 2022 I started this site with the &lt;a href=&quot;https://www.bridgetownrb.com/&quot;&gt;Bridgetown&lt;/a&gt; static site generator. And so far, it’s going well.&lt;/p&gt;
 
 &lt;p&gt;Having become quite an avid fan of Ruby in my recent developer years, a Ruby-powered static site generator seems a good fit. Bridgetown stands on the shoulders of &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;, which became immensely popular through Github Pages.&lt;/p&gt;
 

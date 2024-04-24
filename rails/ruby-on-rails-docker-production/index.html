@@ -4,18 +4,18 @@
   <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!-- Begin Bridgetown SEO tag v6.0.0 -->
-<title>Ruby on Rails with Docker in production | larsp.de</title>
-<meta property="og:title" content="Ruby on Rails with Docker in production" />
+<title>Ruby on Rails with Docker | larsp.de</title>
+<meta property="og:title" content="Ruby on Rails with Docker" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Minimal Docker production setup for Ruby on Rails." />
-<meta property="og:description" content="Minimal Docker production setup for Ruby on Rails." />
+<meta name="description" content="Docker container setup for Ruby on Rails." />
+<meta property="og:description" content="Docker container setup for Ruby on Rails." />
 <link rel="canonical" href="https://larsp.de/rails/ruby-on-rails-docker-production/" />
 <meta property="og:url" content="https://larsp.de/rails/ruby-on-rails-docker-production/" />
 <meta property="og:site_name" content="larsp.de" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-07-12T00:00:00+02:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Ruby on Rails with Docker in production" />
+<meta property="twitter:title" content="Ruby on Rails with Docker" />
 <meta name="twitter:site" content="@lape" />
 <!-- End Bridgetown SEO tag -->
 
@@ -75,7 +75,7 @@
       <div class="share sticky-top sticky-top-offset">
         <ul>
           <li class="ml-1 mr-1">
-            <a href="mailto:?subject=Ruby on Rails with Docker in production&amp;body=https://larsp.de/rails/ruby-on-rails-docker-production/" title="Share link by email" rel="_blank">
+            <a href="mailto:?subject=Ruby on Rails with Docker&amp;body=https://larsp.de/rails/ruby-on-rails-docker-production/" title="Share link by email" rel="_blank">
               <i class="fa-solid fa-envelope"></i>
             </a>
           </li>
@@ -106,7 +106,7 @@
       <article>
         <div class="mainheading">
           <h1 class="posttitle">
-            Ruby on Rails with Docker in production
+            Ruby on Rails with Docker
           </h1>
         </div>
         <div class="article-post">
@@ -116,57 +116,103 @@
 
 <p>Today we are lucky to have several nice options for containerized Rails deployment. Personally, I like the <a href="https://dokku.com/">Dokku</a> hosting system. Think of Dokku as a mini-Heroku; it’s lightweight but certainly packs a punch in terms of functionality. Multi-host deployments are not (easily) possible with Dokku.</p>
 
-<h3 id="mrsk">MRSK</h3>
+<h3 id="kamal">Kamal</h3>
 
-<p>Developed by the Basecamp team and used for their Rails deployments (i.e. the HEY email service), this is a great option for multi-host setups. Imagine <a href="https://github.com/mrsked/mrsk/">MRSK</a> as Capistrano for Containers, it will provision your servers and deploy the software to it, including the right version of Ruby and other dependencies. That all lives in the Docker image now. You can boot a brand new Ubuntu (or whatever) server, add it to the list of servers in MRSK, and it’ll be auto-provisioned with Docker, ready to run.</p>
+<p>Developed by the Basecamp team and used for their Rails deployments (i.e. the HEY email service), this is a great option for multi-host setups. Imagine <a href="https://kamal-deploy.org/">Kamal</a> as Capistrano for Containers, it will provision your servers and deploy the software to it, including the right version of Ruby and other dependencies. That all lives in the Docker image now. You can boot a brand new Ubuntu (or whatever) server, add it to the list of servers in MRSK, and it’ll be auto-provisioned with Docker, ready to run.</p>
 
-<h3 id="minimal-production-dockerfile">Minimal production Dockerfile</h3>
-
-<p>The following is best thought of as a <em>minimal</em> Ruby on Rails Docker production setup. It can be further build on e.g. by using an incremental build process (with several layers).</p>
-
-<p>Maybe not all three database clients MySQL/PostgreSQL/SQLite that are included in the Dockerfile are necessary for your application, so omit what isn’t needed.</p>
+<blockquote>
+  <p>Kamal offers zero-downtime deploys, rolling restarts, asset bridging, remote builds, accessory service management, and everything else you need to deploy and manage your web app in production with Docker. Originally built for Rails apps, Kamal will work with any type of web app that can be containerized.</p>
+</blockquote>
 
 <p><img src="/images/venti-views-1cqIcrWFQBI-unsplash.jpg" alt="Container ship" />
 <em>Photo by <a href="https://unsplash.com/@ventiviews?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Venti Views</a></em></p>
 
 <h3 id="dockerfile">Dockerfile</h3>
 
-<div class="language-docker highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Ruby on Rails application in production mode</span>
-<span class="k">FROM</span><span class="s"> ruby:3.2.2</span>
-<span class="k">RUN </span>curl <span class="nt">-sL</span> https://deb.nodesource.com/setup_14.x | bash -
+<p>Since 7.1 Rails comes with a default Dockerfile, which is a good starting point for your own:</p>
+
+<div class="language-docker highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># syntax = docker/dockerfile:1</span>
+
+<span class="c"># Make sure RUBY_VERSION matches the Ruby version in .ruby-version and Gemfile</span>
+<span class="k">ARG</span><span class="s"> RUBY_VERSION=3.3.0</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">registry.docker.com/library/ruby:$RUBY_VERSION-slim</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="s">base</span>
+
+<span class="c"># Rails app lives here</span>
+<span class="k">WORKDIR</span><span class="s"> /rails</span>
+
+<span class="c"># Set production environment</span>
+<span class="k">ENV</span><span class="s"> RAILS_ENV="production" \</span>
+    BUNDLE_DEPLOYMENT="1" \
+    BUNDLE_PATH="/usr/local/bundle" \
+    BUNDLE_WITHOUT="development"
+
+# Throw-away build stage to reduce size of final image
+<span class="k">FROM</span><span class="w"> </span><span class="s">base</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="s">build</span>
+
+<span class="c"># Install packages needed to build gems and node modules</span>
 <span class="k">RUN </span>apt-get update <span class="nt">-qq</span> <span class="o">&amp;&amp;</span> <span class="se">\
-</span>  apt-get <span class="nb">install</span> <span class="nt">-qq</span> <span class="nt">--no-install-recommends</span> <span class="se">\
-</span>  nodejs <span class="se">\
-</span>  mariadb-client <span class="se">\
-</span>  postgresql-client <span class="se">\
-</span>  sqlite3 <span class="se">\
-</span>  <span class="o">&amp;&amp;</span> apt-get clean <span class="se">\
-</span>  <span class="o">&amp;&amp;</span> <span class="nb">rm</span> <span class="nt">-rf</span> /var/lib/apt/lists/<span class="k">*</span>
-<span class="k">RUN </span>npm <span class="nb">install</span> <span class="nt">-g</span> yarn
-<span class="k">WORKDIR</span><span class="s"> /app</span>
+</span>    apt-get <span class="nb">install</span> <span class="nt">--no-install-recommends</span> <span class="nt">-y</span> build-essential curl git libvips node-gyp pkg-config python-is-python3
+
+<span class="c"># Install JavaScript dependencies</span>
+<span class="k">ARG</span><span class="s"> NODE_VERSION=20.11.0</span>
+<span class="k">ARG</span><span class="s"> YARN_VERSION=1.22.21</span>
+<span class="k">ENV</span><span class="s"> PATH=/usr/local/node/bin:$PATH</span>
+<span class="k">RUN </span>curl <span class="nt">-sL</span> https://github.com/nodenv/node-build/archive/master.tar.gz | <span class="nb">tar </span>xz <span class="nt">-C</span> /tmp/ <span class="o">&amp;&amp;</span> <span class="se">\
+</span>    /tmp/node-build-master/bin/node-build <span class="s2">"</span><span class="k">${</span><span class="nv">NODE_VERSION</span><span class="k">}</span><span class="s2">"</span> /usr/local/node <span class="o">&amp;&amp;</span> <span class="se">\
+</span>    npm <span class="nb">install</span> <span class="nt">-g</span> yarn@<span class="nv">$YARN_VERSION</span> <span class="o">&amp;&amp;</span> <span class="se">\
+</span>    <span class="nb">rm</span> <span class="nt">-rf</span> /tmp/node-build-master
+
+<span class="c"># Install application gems</span>
 <span class="k">COPY</span><span class="s"> Gemfile Gemfile.lock ./</span>
-<span class="k">RUN </span>gem <span class="nb">install </span>bundler
-<span class="k">RUN </span>bundle config <span class="nb">set </span>force_ruby_platform <span class="nb">true</span>
-<span class="k">RUN </span>bundle config <span class="nb">set</span> <span class="nt">--local</span> without <span class="s1">'development test'</span>
-<span class="k">RUN </span>bundle <span class="nb">install</span> <span class="nt">--jobs</span> 20 <span class="nt">--retry</span> 5
-<span class="k">ENV</span><span class="s"> RAILS_ENV production</span>
-<span class="k">ENV</span><span class="s"> RACK_ENV production</span>
-<span class="k">COPY</span><span class="s"> . ./</span>
-<span class="k">RUN </span><span class="nv">SECRET_KEY_BASE</span><span class="o">=</span>1 <span class="se">\
-</span>  bundle <span class="nb">exec </span>rails assets:precompile
+<span class="k">RUN </span>bundle <span class="nb">install</span> <span class="o">&amp;&amp;</span> <span class="se">\
+</span>    <span class="nb">rm</span> <span class="nt">-rf</span> ~/.bundle/ <span class="s2">"</span><span class="k">${</span><span class="nv">BUNDLE_PATH</span><span class="k">}</span><span class="s2">"</span>/ruby/<span class="k">*</span>/cache <span class="s2">"</span><span class="k">${</span><span class="nv">BUNDLE_PATH</span><span class="k">}</span><span class="s2">"</span>/ruby/<span class="k">*</span>/bundler/gems/<span class="k">*</span>/.git <span class="o">&amp;&amp;</span> <span class="se">\
+</span>    bundle <span class="nb">exec </span>bootsnap precompile <span class="nt">--gemfile</span>
+
+<span class="c"># Install node modules</span>
+<span class="k">COPY</span><span class="s"> package.json yarn.lock ./</span>
+<span class="k">RUN </span>yarn <span class="nb">install</span> <span class="nt">--frozen-lockfile</span>
+
+<span class="c"># Copy application code</span>
+<span class="k">COPY</span><span class="s"> . .</span>
+
+<span class="c"># Precompile bootsnap code for faster boot times</span>
+<span class="k">RUN </span>bundle <span class="nb">exec </span>bootsnap precompile app/ lib/
+
+<span class="c"># Precompiling assets for production without requiring secret RAILS_MASTER_KEY</span>
+<span class="k">RUN </span><span class="nv">SECRET_KEY_BASE_DUMMY</span><span class="o">=</span>1 ./bin/rails assets:precompile
+
+<span class="c"># Final stage for app image</span>
+<span class="k">FROM</span><span class="s"> base</span>
+
+<span class="c"># Install packages needed for deployment</span>
+<span class="k">RUN </span>apt-get update <span class="nt">-qq</span> <span class="o">&amp;&amp;</span> <span class="se">\
+</span>    apt-get <span class="nb">install</span> <span class="nt">--no-install-recommends</span> <span class="nt">-y</span> curl libsqlite3-0 libvips <span class="o">&amp;&amp;</span> <span class="se">\
+</span>    <span class="nb">rm</span> <span class="nt">-rf</span> /var/lib/apt/lists /var/cache/apt/archives
+
+<span class="c"># Copy built artifacts: gems, application</span>
+<span class="k">COPY</span><span class="s"> --from=build /usr/local/bundle /usr/local/bundle</span>
+<span class="k">COPY</span><span class="s"> --from=build /rails /rails</span>
+
+<span class="c"># Run and own only the runtime files as a non-root user for security</span>
+<span class="k">RUN </span>useradd rails <span class="nt">--create-home</span> <span class="nt">--shell</span> /bin/bash <span class="o">&amp;&amp;</span> <span class="se">\
+</span>    <span class="nb">chown</span> <span class="nt">-R</span> rails:rails db log storage tmp
+<span class="k">USER</span><span class="s"> rails:rails</span>
+
+<span class="c"># Entrypoint prepares the database.</span>
+<span class="k">ENTRYPOINT</span><span class="s"> ["/rails/bin/docker-entrypoint"]</span>
+
+<span class="c"># Start the server by default, this can be overwritten at runtime</span>
 <span class="k">EXPOSE</span><span class="s"> 3000</span>
-<span class="k">CMD</span><span class="s"> bundle exec rails s -e production -p 3000</span>
+<span class="k">CMD</span><span class="s"> ["./bin/rails", "server"]</span>
 </code></pre></div></div>
 
 <p>Extend with a GitHub action to build on commit (similar to <a href="/webtech/bridgetown/">autobuilding this Bridgetown site</a>) and push the image to a repository like Docker Hub or Amazon ECR.</p>
 
-<p>Combine with nginx or <a href="https://github.com/traefik/traefik/">Traefik</a> as load balancer/reverse proxy.</p>
+<p>Combine with nginx or <a href="https://github.com/traefik/traefik/">Traefik</a> as load balancer/reverse proxy (or use Kamal or Dokku).</p>
 
 <p>Using nginx an additional certbot container is needed to generate and renew Letsencrypt TLS certificates. Traefik will handle this by itself.</p>
 
 <p>Another great option is to use the great <a href="https://fly.io/">fly.io</a> service, which runs your Docker image on <a href="https://firecracker-microvm.github.io/">Firecracker</a> microVMs on their global infrastructure.</p>
-
-<p><a href="https://mailsnag.com/blog/optimized-ruby-dockerfile/">Mailsnag recently posted</a> a comprehensive Dockerfile for production.</p>
 
         </div>
       </article>
